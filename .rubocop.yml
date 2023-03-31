@@ -1,0 +1,11 @@
+inherit_from:
+  - .rubocop_todo.yml
+  - .rubocop-performance.yml
+  - .rubocop-rails.yml
+  - .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-capybara
