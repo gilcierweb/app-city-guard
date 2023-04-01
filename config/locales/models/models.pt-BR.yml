@@ -1,0 +1,38 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: "Usuário"
+        other: "Usuários"
+
+      contact:
+        one: "Contato"
+        other: "Contatos"
+
+    attributes:
+
+      user:
+        full_name: "Nome"
+        email: "Email"
+        admin: "Administrador"
+        password: "Senha"
+        password_confirmation: "Confirmação da Senha"
+        current_password: "Senha Atual"
+        remember_me: "Entrar automaticamente"
+
+      contact:
+        full_name: 'Nome completo'
+        email: 'Email'
+        city: 'Cidade'
+        state: 'Estado'
+        phone: 'Telefone'
+        subject: 'Assunto'
+        message: 'Mensagem'
+
+
+    errors:
+      template:
+        header:
+          one:   "1 erro impediu que este(a) %{model} fosse salvo(a)"
+          other: "%{count} erros impediram que esse(a) %{model} fosse salvo(a)"
+        body:    "Existem problemas nos seguintes campos:"

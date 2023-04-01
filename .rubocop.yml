@@ -9,3 +9,15 @@ require:
   - rubocop-rails
   - rubocop-rspec
   - rubocop-capybara
+
+AllCops:
+  TargetRubyVersion: 3.2
+  Exclude:
+    - 'coverage/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'spec/rails_helper.rb'
