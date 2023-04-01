@@ -1,17 +1,17 @@
 <div class="card shadow-lg">
   <div class="card-body p-5">
-    <h1 class="fs-4 card-title fw-bold mb-4">Resend confirmation instructions</h1>
+    <h1 class="fs-4 card-title fw-bold mb-4"><%= t('devise.passwords.title.new') %></h1>
 
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }, data: { turbo: false }) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
       <div class="mb-3">
-        <%= f.label :email, class: 'form-label mb-2 text-muted' %><br/>
+        <%= f.label :email, class: 'form-label mb-2 text-muted' %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-control form-control-lg' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Resend confirmation instructions" %>
+        <%= f.submit t('devise.confirmations.form.new.submit'), class: "btn btn-primary" %>
       </div>
     <% end %>
 

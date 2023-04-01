@@ -1,6 +1,6 @@
 <div class="card shadow-lg">
   <div class="card-body p-5">
-    <h1 class="fs-4 card-title fw-bold mb-4">Change your password</h1>
+    <h1 class="fs-4 card-title fw-bold mb-4"><%= t('devise.passwords.title.edit') %></h1>
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }, data: { turbo: false }) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
@@ -9,7 +9,7 @@
       <div class="mb-3">
         <%= f.label :password, "New password", class: 'form-label mb-2 text-muted' %><br/>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em><br/>
+          <em>(<%= @minimum_password_length %> <%= t('devise.registrations.form.text.min') %>)</em><br/>
         <% end %>
         <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'form-control form-control-lg' %>
       </div>
@@ -24,6 +24,6 @@
       </div>
     <% end %>
 
-    <%= render "users/shared/links" %>
   </div>
+  <%= render "users/shared/links" %>
 </div>

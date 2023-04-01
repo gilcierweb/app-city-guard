@@ -6,7 +6,7 @@
       <%= render "users/shared/error_messages", resource: resource %>
 
       <div class="mb-3">
-        <%= f.label :email, class: 'form-label mb-2 text-muted' %><br/>
+        <%= f.label :email, class: 'form-label mb-2 text-muted' %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg' %>
       </div>
 
@@ -14,12 +14,12 @@
         <%= f.label :password, class: 'form-label mb-2 text-muted' %>
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> <%= t('devise.registrations.form.text.min') %>)</em>
-        <% end %><br/>
+        <% end %>
         <%= f.password_field :password, autocomplete: "new-password", class: 'form-control form-control-lg' %>
       </div>
 
       <div class="mb-3">
-        <%= f.label :password_confirmation, class: 'form-label mb-2 text-muted' %><br/>
+        <%= f.label :password_confirmation, class: 'form-label mb-2 text-muted' %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control form-control-lg' %>
       </div>
 

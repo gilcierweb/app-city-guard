@@ -1,36 +1,36 @@
 <div class="card shadow-lg">
   <div class="card-body p-5">
-    <h1 class="fs-4 card-title fw-bold mb-4">Edit <%= resource_name.to_s.humanize %></h1>
+    <h1 class="fs-4 card-title fw-bold mb-4">Editando <%= resource_name.to_s.humanize %></h1>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: { turbo: false }) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
       <div class="mb-3">
-        <%= f.label :email, class: 'form-label mb-2 text-muted' %><br/>
+        <%= f.label :email, class: 'form-label mb-2 text-muted' %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg' %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <div><%= t('devise.registrations.form.text.confirmation') %>: <%= resource.unconfirmed_email %></div>
       <% end %>
 
       <div class="mb-3">
-        <%= f.label :password,class: 'form-label mb-2 text-muted' %> <i>(leave blank if you don't want to change it)</i><br/>
+        <%= f.label :password,class: 'form-label mb-2 text-muted' %> <i><%= t('devise.registrations.form.text.password') %></i>
         <%= f.password_field :password, autocomplete: "new-password", class: 'form-control form-control-lg' %>
         <% if @minimum_password_length %>
-          <br/>
-          <em><%= @minimum_password_length %> characters minimum</em>
+          
+          <em><%= @minimum_password_length %> <%= t('devise.registrations.form.text.min') %></em>
         <% end %>
       </div>
 
       <div class="mb-3">
-        <%= f.label :password_confirmation, class: 'form-label mb-2 text-muted' %><br/>
+        <%= f.label :password_confirmation, class: 'form-label mb-2 text-muted' %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control form-control-lg' %>
       </div>
 
       <div class="mb-3">
         <%= f.label :current_password, class: 'form-label mb-2 text-muted' %>
-        <i>(we need your current password to confirm your changes)</i><br/>
+        <i><%= t('devise.registrations.form.text.current_password') %></i>
         <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control form-control-lg' %>
       </div>
 
@@ -39,10 +39,10 @@
       </div>
     <% end %>
 
-    <h3>Cancel my account</h3>
+    <h3><%= t('devise.registrations.form.title.cancel') %></h3>
 
-    <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+    <div><%= t('devise.registrations.form.title.unhappy') %> <%= button_to t('devise.registrations.form.title.cancel_my_account'), registration_path(resource_name), data: { confirm: t('confirm'), turbo_confirm: t('confirm') }, method: :delete %></div>
 
-    <%= link_to "Back", :back %>
+    <%= link_to t('back'), :back, class: "btn btn-default" %>
   </div>
 </div>

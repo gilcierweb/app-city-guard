@@ -31,6 +31,13 @@ pt-BR:
         subject: "Instruções para reiniciar sua senha"
       unlock_instructions:
         subject: "Instruções para destravar sua senha"
+      email_changed:
+        subject: "Notificação de mudança de email"
+        phase1: 'Estamos entrando em contato para notificá-lo de que seu e-mail está sendo alterado para'
+        phase2: 'Estamos entrando em contato para notificá-lo de que seu e-mail foi alterado para'
+      password_change:
+        subject: "Notificação de mudança de senha"
+        phase1: 'Estamos entrando em contato para notificá-lo de que sua senha foi alterada.'
       title:
         welcome: "Bem-vindo"
         hello: "Olá"
