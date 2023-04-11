@@ -82,6 +82,7 @@ test:
 #
 production:
   <<: *default
-  database: app_city_guard_production
-  username: app_city_guard
-  password: <%= ENV["APP_CITY_GUARD_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+#  database: app_city_guard_production
+#  username: app_city_guard
+#  password: <%#= ENV["APP_CITY_GUARD_DATABASE_PASSWORD"] %>
