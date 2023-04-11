@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <div class="header-title">
+      <h1>View <%= human_name.downcase %></h1>
+    </div>
+  </div>
+  <div class="card-body">
+    <%%= render @<%= singular_table_name %> %>
+
+    <div>
+      <%%= link_to t('edit'), <%= edit_helper(type: :path) %>, class: 'btn btn-primary' %> |
+      <%%= link_to t('back'), <%= index_helper(type: :path) %>, class: 'btn btn-default' %>
+
+      <%%= button_to t('destroy'), <%= model_resource_name(prefix: "@") %>, method: :delete %>
+    </div>
+  </div>
+</div>

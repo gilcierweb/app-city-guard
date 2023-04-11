@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <div class="header-title">
+
+      <h1><%= human_name.pluralize %></h1>
+    </div>
+  </div>
+  <div id="companies" class="card-body p-0">
+    <div class="table-responsive mt-4">
+
+      <table id="basic-table-<%= plural_table_name %>" class="table table-striped mb-0" role="grid">
+        <thead class="text-primary">
+        <tr>
+          <% attributes.reject(&:password_digest?).each do |attribute| -%>
+            <th><%%= t('activerecord.attributes.<%= singular_table_name %>.<%= attribute.name %>') %></th>
+          <% end -%>
+          <th><%%= t('action') %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+        <tr>
+          <% attributes.reject(&:password_digest?).each do |attribute| -%>
+            <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+          <% end -%>
+          <td><%%= link_to t('show'), <%= model_resource_name(singular_table_name) %>, class: 'btn btn-info' %>
+          <%%= link_to t('edit'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-primary' %>
+          <%%= link_to t('destroy'), <%= singular_table_name %>, method: :delete, data: { confirm: t('confirm')}, class: 'btn btn-danger' %></td>
+        </tr>
+        <%% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <%%= link_to t('new'), <%= new_helper(type: :path) %>, class: 'btn btn-success' %>
+  </div>
+</div>
+</div>

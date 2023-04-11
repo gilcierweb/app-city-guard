@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+user = User.create(username: nil, password: nil)
+
+user = User.find(user)
+user.add_role :admin
+user.has_role? :admin
+
+user.add_role? :manager
+user.has_role? :manager
+
+user.add_role? :employee
+user.has_role? :employee
