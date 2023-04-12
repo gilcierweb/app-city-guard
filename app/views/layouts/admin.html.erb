@@ -25,15 +25,19 @@
 </div>
 <!-- loader END -->
 
-<%= render 'layouts/partials/admin/header', cached: true %>
+<%= render 'layouts/partials/admin/aside_menu' %>
 
 <main class="main-content">
+  <%= render 'layouts/partials/admin/header' %>
+  <%= render 'shared/flash_message' %>
 
-  <%= render 'layouts/partials/admin/header_top', cached: true %>
+  <div class="conatiner-fluid content-inner mt-3">
 
-  <div class="conatiner-fluid content-inner mt-n5 py-0">
     <%= yield %>
+
   </div>
+
+  <%= render 'layouts/partials/admin/footer' %>
 </main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
