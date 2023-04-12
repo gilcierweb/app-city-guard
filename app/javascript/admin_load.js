@@ -5,6 +5,7 @@ import "@hotwired/turbo-rails"
 import "./admin/core/external.min"
 // import "./admin/plugins/circle-progress"
 import "./admin/plugins/setting"
+import "./admin/plugins/countdown"
 // AOS Animation Plugin
 import "./admin/plugins/aos.js"
 import "./admin/custom"
