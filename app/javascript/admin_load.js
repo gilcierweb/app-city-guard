@@ -7,6 +7,6 @@ import "./admin/core/external.min"
 import "./admin/plugins/setting"
 // AOS Animation Plugin
 import "./admin/plugins/aos.js"
-// import "./admin/custom"
+import "./admin/custom"
 import "./admin/hope-ui"
 
