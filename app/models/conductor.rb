@@ -25,4 +25,5 @@
 #
 class Conductor < ApplicationRecord
   belongs_to :inspection
+  has_many :vehicles
 end

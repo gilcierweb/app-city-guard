@@ -61,9 +61,9 @@
     <%= form.text_field :user_id, class: "form-control" %>
   </div>
 
-  <%= render 'form_conductor', form: form%>
-
-  <%= render 'form_vehicle', form: form %>
+  <%= form.fields_for :conductor do |conductor_subform| %>
+    <%= render 'form_conductor', form: conductor_subform %>
+  <% end %>
 
   <div class="mb-3">
     <%= form.submit class: "btn btn-primary" %>

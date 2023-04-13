@@ -21,7 +21,7 @@
 #
 class City < ApplicationRecord
   belongs_to :state
-
+  has_many :vehicles
   def self.select_list()
     self.all.collect { |row| [row.name_pt_BR, row.id] }
   end

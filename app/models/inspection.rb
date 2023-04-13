@@ -26,4 +26,7 @@
 #
 class Inspection < ApplicationRecord
   belongs_to :user
+  has_many :conductors
+
+  accepts_nested_attributes_for :conductors, allow_destroy: true
 end

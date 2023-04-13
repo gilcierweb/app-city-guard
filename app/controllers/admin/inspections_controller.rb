@@ -13,6 +13,7 @@ class Admin::InspectionsController < AdminController
   # GET /admin/inspections/new
   def new
     @inspection = Inspection.new
+    @inspection.conductors.build
   end
 
   # GET /admin/inspections/1/edit
@@ -58,13 +59,18 @@ class Admin::InspectionsController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_inspection
-      @inspection = Inspection.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def inspection_params
-      params.require(:inspection).permit(:code, :motive_apprehension, :address_full, :latitude, :longitude, :neighborhood, :observations, :situation, :status, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_inspection
+    @inspection = Inspection.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def inspection_params
+    params.require(:inspection).permit(:code, :motive_apprehension, :address_full, :latitude, :longitude, :neighborhood, :observations, :situation, :status, :user_id,
+                                       conductors_attributes: [:full_name, :nickname, :cpf,
+                                                               vehicle_attributes: [:id, :kind, :color, :plate, :tachometer, :chassi, :engine_number, :brand_id, :state_id, :city_id, :conductor_id, :qualified],
+                                       ],
+    )
+  end
 end

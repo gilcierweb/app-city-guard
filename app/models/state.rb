@@ -23,6 +23,7 @@
 class State < ApplicationRecord
   belongs_to :country
   has_many :cities
+  has_many :vehicles
 
   def self.select_list()
     self.all.collect { |row| [row.name_pt_BR, row.id] }

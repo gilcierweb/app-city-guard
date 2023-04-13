@@ -1,3 +1,4 @@
+<h2>conductor</h2>
 <div class="mb-3">
   <%= form.label :first_name, class: "form-label" %>
   <%= form.text_field :first_name, class: "form-control" %>
@@ -42,3 +43,9 @@
   <%= form.label :inspection_id, class: "form-label" %>
   <%= form.text_field :inspection_id, class: "form-control" %>
 </div>
+
+<h2>vehicle</h2>
+
+<%= form.fields_for :vehicle do |vehicle_subform| %>
+  <%= render 'form_vehicle', form: vehicle_subform %>
+<% end %>
