@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <div class="header-title">
+      <h1>View inspection</h1>
+    </div>
+  </div>
+  <div class="card-body">
+    <%= render @inspection %>
+
+    <div>
+      <%= link_to t('edit'), edit_admin_inspection_path(@inspection), class: 'btn btn-primary' %> |
+      <%= link_to t('back'), admin_inspections_path, class: 'btn btn-default' %>
+
+      <%= button_to t('destroy'), [:admin, @inspection], method: :delete %>
+    </div>
+  </div>
+</div>

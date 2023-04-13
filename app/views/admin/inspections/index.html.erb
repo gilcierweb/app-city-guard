@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <div class="header-title">
+
+      <h1>Inspections</h1>
+    </div>
+  </div>
+  <div id="companies" class="card-body p-0">
+    <div class="table-responsive mt-4">
+
+      <table id="basic-table-inspections" class="table table-striped mb-0" role="grid">
+        <thead class="text-primary">
+        <tr>
+                      <th><%= t('activerecord.attributes.inspection.code') %></th>
+                      <th><%= t('activerecord.attributes.inspection.motive_apprehension') %></th>
+                      <th><%= t('activerecord.attributes.inspection.address_full') %></th>
+                      <th><%= t('activerecord.attributes.inspection.latitude') %></th>
+                      <th><%= t('activerecord.attributes.inspection.longitude') %></th>
+                      <th><%= t('activerecord.attributes.inspection.neighborhood') %></th>
+                      <th><%= t('activerecord.attributes.inspection.observations') %></th>
+                      <th><%= t('activerecord.attributes.inspection.situation') %></th>
+                      <th><%= t('activerecord.attributes.inspection.status') %></th>
+                      <th><%= t('activerecord.attributes.inspection.user') %></th>
+                    <th><%= t('action') %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @inspections.each do |inspection| %>
+        <tr>
+                      <td><%= inspection.code %></td>
+                      <td><%= inspection.motive_apprehension %></td>
+                      <td><%= inspection.address_full %></td>
+                      <td><%= inspection.latitude %></td>
+                      <td><%= inspection.longitude %></td>
+                      <td><%= inspection.neighborhood %></td>
+                      <td><%= inspection.observations %></td>
+                      <td><%= inspection.situation %></td>
+                      <td><%= inspection.status %></td>
+                      <td><%= inspection.user %></td>
+                    <td><%= link_to t('show'), [:admin, inspection], class: 'btn btn-info' %>
+          <%= link_to t('edit'), edit_inspection_path(inspection), class: 'btn btn-primary' %>
+          <%= link_to t('destroy'), inspection, method: :delete, data: { confirm: t('confirm')}, class: 'btn btn-danger' %></td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <%= link_to t('new'), new_admin_inspection_path, class: 'btn btn-success' %>
+  </div>
+</div>
+</div>

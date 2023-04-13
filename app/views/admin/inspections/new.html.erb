@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <div class="header-title">
+      <h1>New inspection</h1>
+    </div>
+  </div>
+  <div class="card-body">
+    <%= render "form", inspection: @inspection %>
+
+    <br>
+
+    <div>
+      <%= link_to t('back'), admin_inspections_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+</div>

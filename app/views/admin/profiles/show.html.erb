@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <div class="header-title">
+      <h1>View profile</h1>
+    </div>
+  </div>
+  <div class="card-body">
+    <%= render @profile %>
+
+    <div>
+      <%= link_to t('edit'), edit_admin_profile_path(@profile), class: 'btn btn-primary' %> |
+      <%= link_to t('back'), admin_profiles_path, class: 'btn btn-default' %>
+
+      <%= button_to t('destroy'), [:admin, @profile], method: :delete %>
+    </div>
+  </div>
+</div>
