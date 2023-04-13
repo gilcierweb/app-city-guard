@@ -413,6 +413,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
   loaderInit()
 });
 
+$(document).on('turbo:load', function () {
+  loaderInit();
+  // $(document).ready(function() {
+// jQuery(function ($) {
+//   flatpickr(".datetimeflatpickr",
+//       {
+//         enableTime: true,
+//         time_24hr: true,
+//         dateFormat: "d-m-Y H:i",
+//         "locale": 'pt'
+//       });
+//
+//   flatpickr(".dateflatpickr",
+//       {
+//         dateFormat: "d-m-Y",
+//         "locale": 'pt'
+//       });
+
+// });
+});
+
+
 /*---------------------------------------------------------------------
               Window Resize
 -----------------------------------------------------------------------*/
