@@ -51,14 +51,18 @@
   <%= form.label :brand_id, class: "form-label" %>
   <%= form.number_field :brand_id, class: "form-control" %>
 </div>
-<div class="mb-3">
-  <%= form.label :state_id, class: "form-label" %>
-  <%= form.number_field :state_id, class: "form-control" %>
+<div data-controller="city-load">
+  <div class="mb-3">
+    <%= form.label :state_id, class: "form-label" %>
+    <%= form.select(:state_id, State.select_list(), { :prompt => t('form.select') }, { class: 'form-select form-select-lg select2-input', disabled: nil, data: { target: 'city-load.state', action: "change->city-load#cities" } }) %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :city_id, class: "form-label" %>
+    <%= form.select(:city_id, {}, { :prompt => t('form.select') }, { class: 'form-select form-select-lg select2-input', disabled: nil, data: { target: 'city-load.city', } }) %>
+  </div>
 </div>
-<div class="mb-3">
-  <%= form.label :city_id, class: "form-label" %>
-  <%= form.number_field :city_id, class: "form-control" %>
-</div>
+
 <div class="mb-3">
   <%= form.label :conductor_id, class: "form-label" %>
   <%= form.number_field :conductor_id, class: "form-control" %>

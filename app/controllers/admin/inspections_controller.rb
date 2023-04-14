@@ -58,6 +58,14 @@ class Admin::InspectionsController < AdminController
     end
   end
 
+  def cities
+    city = City.select('cities.id, cities."name_pt_BR" as name').where(state_id:params[:state_id]).order('cities."name_pt_BR" ASC')
+
+    respond_to do |format|
+      format.json {render json: {:success => true, :data => city}, :status => :ok}
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -65,10 +73,14 @@ class Admin::InspectionsController < AdminController
     @inspection = Inspection.find(params[:id])
   end
 
+  def get_ajax_params
+    params.require(:ajax_params).permit(:state_id)
+  end
+
   # Only allow a list of trusted parameters through.
   def inspection_params
     params.require(:inspection).permit(:code, :motive_apprehension, :address_full, :latitude, :longitude, :neighborhood, :observations, :situation, :status, :user_id,
-                                       conductors_attributes: [:full_name, :nickname, :cpf,
+                                       conductors_attributes: [:id, :first_name, :last_name, :full_name, :nickname, :cpf, :birthday, :bio, :inspection_id,
                                                                vehicle_attributes: [:id, :kind, :color, :plate, :tachometer, :chassi, :engine_number, :brand_id, :state_id, :city_id, :conductor_id, :qualified],
                                        ],
     )

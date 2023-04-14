@@ -414,6 +414,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 $(document).on('turbo:load', function () {
+  resizePlugins();
   loaderInit();
   // $(document).ready(function() {
 // jQuery(function ($) {

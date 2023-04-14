@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import CityLoadController from "./city_load_controller"
+application.register("city-load", CityLoadController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

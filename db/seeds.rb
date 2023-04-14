@@ -18,32 +18,32 @@
 # user.add_role? :employee
 # user.has_role? :employee
 
-puts 'Brand car'
-path = File.join(File.dirname(__FILE__), "./seeds/brand_car.json")
-records = JSON.parse(File.read(path))
-records.each do |record|
-  puts record.inspect
-  puts data = {code: record['codigo'], name: record['nome'], kind: 1}
-  Brand.create(data)
-end
-
-puts 'Brand moto'
-path = File.join(File.dirname(__FILE__), "./seeds/brand_moto.json")
-records = JSON.parse(File.read(path))
-records.each do |record|
-  puts record.inspect
-  puts data = {code: record['codigo'], name: record['nome'], kind: 2}
-  Brand.create(data)
-end
-
-puts 'Brand truck'
-path = File.join(File.dirname(__FILE__), "./seeds/brand_truck.json")
-records = JSON.parse(File.read(path))
-records.each do |record|
-  puts record.inspect
-  puts data = {code: record['codigo'], name: record['nome'], kind: 3}
-  Brand.create(data)
-end
+# puts 'Brand car'
+# path = File.join(File.dirname(__FILE__), "./seeds/brand_car.json")
+# records = JSON.parse(File.read(path))
+# records.each do |record|
+#   puts record.inspect
+#   puts data = {code: record['codigo'], name: record['nome'], kind: 1}
+#   Brand.create(data)
+# end
+#
+# puts 'Brand moto'
+# path = File.join(File.dirname(__FILE__), "./seeds/brand_moto.json")
+# records = JSON.parse(File.read(path))
+# records.each do |record|
+#   puts record.inspect
+#   puts data = {code: record['codigo'], name: record['nome'], kind: 2}
+#   Brand.create(data)
+# end
+#
+# puts 'Brand truck'
+# path = File.join(File.dirname(__FILE__), "./seeds/brand_truck.json")
+# records = JSON.parse(File.read(path))
+# records.each do |record|
+#   puts record.inspect
+#   puts data = {code: record['codigo'], name: record['nome'], kind: 3}
+#   Brand.create(data)
+# end
 
 require 'open-uri'
 
