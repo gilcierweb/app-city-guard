@@ -5,6 +5,25 @@ pt-BR:
         one: "Usuário"
         other: "Usuários"
 
+      inspection:
+        one: "Vistoria"
+        other: "Vistorias"
+      conductor:
+        one: "Condutor"
+        other: "Condutores"
+      vehicle:
+        one: "Veículo"
+        other: "Veículos"
+      state:
+        one: "Estado"
+        other: "Estados"
+      city:
+        one: "Cidade"
+        other: "Cidades"
+      brand:
+        one: "Marca"
+        other: "Marcas"
+
       contact:
         one: "Contato"
         other: "Contatos"
@@ -50,7 +69,39 @@ pt-BR:
         birthday: 'Data de nascimento'
         bio: 'Biogafia'
         cpf: 'CPF'
+        qualifieds:
+          yes: 'Sim'
+          no: 'Não'
 
+      vehicle:
+        kind: 'Tipo'
+        brand: 'Marca'
+        model: 'Modelo'
+        color: 'Cor'
+        state_name: 'Estado'
+        city_name: 'Cidade'
+        plate: 'Placa'
+        tachometer: 'CPF'
+        chassi: 'Chassi'
+        engine_number: 'Número do motor'
+        brand_id: 'Marca'
+        state: 'Estado'
+        city: 'Cidade'
+        conductor: 'Condutor'
+
+
+      brand:
+        full_name: 'Nome completo'
+        email: 'Email'
+        city: 'Cidade'
+        state: 'Estado'
+        phone: 'Telefone'
+        subject: 'Assunto'
+        message: 'Mensagem'
+        kind: 'Qual tipo'
+        kinds:
+          car: 'Carro'
+          moto: 'Moto'
 
       contact:
         full_name: 'Nome completo'

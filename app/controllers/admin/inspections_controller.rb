@@ -14,6 +14,7 @@ class Admin::InspectionsController < AdminController
   def new
     @inspection = Inspection.new
     @inspection.conductors.build
+    @inspection.conductors.build.vehicles.build
   end
 
   # GET /admin/inspections/1/edit
@@ -59,10 +60,18 @@ class Admin::InspectionsController < AdminController
   end
 
   def cities
-    city = City.select('cities.id, cities."name_pt_BR" as name').where(state_id:params[:state_id]).order('cities."name_pt_BR" ASC')
+    city = City.select('cities.id, cities."name_pt_BR" as name').where(state_id: params[:state_id]).order('cities."name_pt_BR" ASC')
 
     respond_to do |format|
-      format.json {render json: {:success => true, :data => city}, :status => :ok}
+      format.json { render json: { :success => true, :data => city }, :status => :ok }
+    end
+  end
+
+  def brands
+    brand = Brand.select('brands.id, brands."name"').where(kind: params[:kind]).order('brands."name" ASC')
+
+    respond_to do |format|
+      format.json { render json: { :success => true, :data => brand }, :status => :ok }
     end
   end
 

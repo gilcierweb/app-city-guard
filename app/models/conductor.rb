@@ -26,4 +26,9 @@
 class Conductor < ApplicationRecord
   belongs_to :inspection
   has_many :vehicles
+
+  enum qualified: { yes: true, no: false, }
+
+  accepts_nested_attributes_for :vehicles, reject_if: :all_blank, allow_destroy: true
+
 end

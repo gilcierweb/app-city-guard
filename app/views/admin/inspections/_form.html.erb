@@ -11,15 +11,23 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
-    <%= form.label :code, class: "form-label" %>
-    <%= form.number_field :code, class: "form-control" %>
-  </div>
+<!--  <div class="mb-3">-->
+    <%#= form.label :code, class: "form-label" %>
+    <%#= form.number_field :code, class: "form-control" %>
+<!--  </div>-->
+
+  <%= form.fields_for :conductor do |conductor_subform| %>
+    <%= render 'form_conductor', form: conductor_subform %>
+  <% end %>
+
+
 
   <div class="mb-3">
     <%= form.label :motive_apprehension, class: "form-label" %>
     <%= form.text_field :motive_apprehension, class: "form-control" %>
   </div>
+
+  <h2>Sobre o local</h2>
 
   <div class="mb-3">
     <%= form.label :address_full, class: "form-label" %>
@@ -41,6 +49,7 @@
     <%= form.text_field :neighborhood, class: "form-control" %>
   </div>
 
+
   <div class="mb-3">
     <%= form.label :observations, class: "form-label" %>
     <%= form.text_area :observations, class: "form-control" %>
@@ -60,10 +69,6 @@
     <%= form.label :user_id, class: "form-label" %>
     <%= form.text_field :user_id, class: "form-control" %>
   </div>
-
-  <%= form.fields_for :conductor do |conductor_subform| %>
-    <%= render 'form_conductor', form: conductor_subform %>
-  <% end %>
 
   <div class="mb-3">
     <%= form.submit class: "btn btn-primary" %>

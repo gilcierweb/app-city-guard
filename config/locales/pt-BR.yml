@@ -58,6 +58,8 @@ pt-BR:
     reset: 'Limpar'
     yesa: 'Sim'
     noa: 'Não'
+    yes: 'Sim'
+    no: 'Não'
 
   controller:
     create: 'Dados criados com sucesso.'

@@ -11,7 +11,6 @@
 #  kind          :integer
 #  model         :string
 #  plate         :string
-#  qualified     :boolean
 #  state_name    :string
 #  tachometer    :string
 #  created_at    :datetime         not null

@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import BrandLoadController from "./brand_load_controller"
+application.register("brand-load", BrandLoadController)
+
 import CityLoadController from "./city_load_controller"
 application.register("city-load", CityLoadController)
 

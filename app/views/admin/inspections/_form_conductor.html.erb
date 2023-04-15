@@ -1,50 +1,61 @@
-<h2>conductor</h2>
-<div class="mb-3">
-  <%= form.label :first_name, class: "form-label" %>
-  <%= form.text_field :first_name, class: "form-control" %>
-</div>
+<h2>Sobre o condutor</h2>
+<p>Campos com (*) são obrigatório.</p>
+<!--<div class="mb-3">-->
+  <%#= form.label :first_name, t('conductor.first_name'), class: "form-label" %>
+  <%#= form.text_field :first_name, class: "form-control" %>
+<!--</div>-->
+
+<!--<div class="mb-3">-->
+  <%#= form.label :last_name, t('conductor.last_name'), class: "form-label" %>
+  <%#= form.text_field :last_name, class: "form-control" %>
+<!--</div>-->
 
 <div class="mb-3">
-  <%= form.label :last_name, class: "form-label" %>
-  <%= form.text_field :last_name, class: "form-control" %>
-</div>
-
-<div class="mb-3">
-  <%= form.label :full_name, class: "form-label" %>
-  <%= form.text_field :full_name, class: "form-control" %>
-</div>
-
-<div class="mb-3">
-  <%= form.label :nickname, class: "form-label" %>
+  <%= form.label :nickname, t('conductor.nickname'), class: "form-label" %>
   <%= form.text_field :nickname, class: "form-control" %>
 </div>
 
 <div class="mb-3">
-  <%= form.label :cpf, class: "form-label" %>
+  <%= form.label :full_name, t('conductor.full_name'), class: "form-label" %>
+  <%= form.text_field :full_name, class: "form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :cpf, t('conductor.cpf'), class: "form-label" %>
   <%= form.text_field :cpf, class: "form-control" %>
 </div>
 
-<div class="mb-3">
-  <%= form.label :bio, class: "form-label" %>
-  <%= form.text_field :bio, class: "form-control" %>
-</div>
+<!--<div class="mb-3">-->
+  <%#= form.label :bio, t('conductor.bio'), class: "form-label" %>
+  <%#= form.text_field :bio, class: "form-control" %>
+<!--</div>-->
+
+<!--<div class="mb-3">-->
+  <%#= form.label :birthday, t('conductor.birthday'), class: "form-label" %>
+  <%#= form.text_field :birthday, class: "form-control" %>
+<!--</div>-->
 
 <div class="mb-3">
-  <%= form.label :birthday, class: "form-label" %>
-  <%= form.text_field :birthday, class: "form-control" %>
+  <div class="form-group">
+    <%= form.label :qualified, t('activerecord.attributes.conductor.qualified'), class: "form-label" %><br>
+
+    <div class="form-check form-check-inline">
+      <%= form.radio_button(:qualified, :yes, class: 'form-check-input') %>
+      <%= form.label :qualified_yes, t('form.yesa'), class: 'form-check-label' %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= form.radio_button(:qualified, :no, class: 'form-check-input') %>
+      <%= form.label :qualified_no, t('form.noa'), class: 'form-check-label' %>
+    </div>
+  </div>
 </div>
 
-<div class="mb-3">
-  <%= form.label :qualified, class: "form-label" %>
-  <%= form.text_field :qualified, class: "form-control" %>
-</div>
+<!--<div class="mb-3">-->
+  <%#= form.label :inspection_id, t('conductor.inspection_id'), class: "form-label" %>
+  <%#= form.text_field :inspection_id, class: "form-control" %>
+<!--</div>-->
 
-<div class="mb-3">
-  <%= form.label :inspection_id, class: "form-label" %>
-  <%= form.text_field :inspection_id, class: "form-control" %>
-</div>
-
-<h2>vehicle</h2>
+<h2>Sobre o veículo</h2>
 
 <%= form.fields_for :vehicle do |vehicle_subform| %>
   <%= render 'form_vehicle', form: vehicle_subform %>

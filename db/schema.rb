@@ -139,7 +139,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_204901) do
 
   create_table "vehicles", force: :cascade do |t|
     t.integer "kind"
-    t.boolean "qualified"
     t.string "brand"
     t.string "model"
     t.string "color"

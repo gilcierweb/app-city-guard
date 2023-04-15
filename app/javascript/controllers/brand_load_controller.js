@@ -2,20 +2,22 @@ import {Controller} from "@hotwired/stimulus"
 
 import axios from "../custom-axios";
 
-// Connects to data-controller="city-load"
+// Connects to data-controller="brand-load"
 export default class extends Controller {
-    static targets = ["state", "city"];
+    static targets = ["kind", "brand"];
 
     connect() {
     }
 
-    cities() {
+    brands(event) {
 
-        let state_id = this.stateTarget.value;
+        // let kind = this.kindTarget.value;
 
-        if (!_.isEmpty(state_id.trim())) {
+        let kind = event.target.value
+
+        if (!_.isEmpty(kind.trim())) {
             axios
-                .get("/admin/inspections/cities/" + state_id)
+                .get("/admin/inspections/brands/" + kind)
                 .then((data) => {
                     this.updateDropdown(data.data.data);
                 })
@@ -26,20 +28,20 @@ export default class extends Controller {
     }
 
     updateDropdown(data) {
-        let state_id = this.stateTarget.value;
-        this.cityTarget.innerHTML = "";
+        let brand_id = this.brandTarget.value;
+        this.brandTarget.innerHTML = "";
         const num_rooms = data;
         if (_.isEmpty(num_rooms)) {
             const option = document.createElement("option");
-            option.innerHTML = "Escolha o estado primeiro";
-            this.cityTarget.appendChild(option);
+            option.innerHTML = "Escolha o tipo de veículo";
+            this.brandTarget.appendChild(option);
         } else {
             data.forEach((row) => {
                 const option = document.createElement("option");
                 option.value = row.id;
                 option.innerHTML = row.name;
-                option.selected = parseInt(state_id) === row.id;
-                this.cityTarget.appendChild(option);
+                option.selected = parseInt(brand_id) === row.id;
+                this.brandTarget.appendChild(option);
             });
         }
     }

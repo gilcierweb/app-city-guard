@@ -11,7 +11,6 @@
 #  kind          :integer
 #  model         :string
 #  plate         :string
-#  qualified     :boolean
 #  state_name    :string
 #  tachometer    :string
 #  created_at    :datetime         not null
@@ -38,7 +37,6 @@
 FactoryBot.define do
   factory :vehicle do
     kind { 1 }
-    qualified { false }
     brand { "MyString" }
     model { "MyString" }
     color { "MyString" }

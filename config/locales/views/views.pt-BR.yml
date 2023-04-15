@@ -1,0 +1,10 @@
+pt-BR:
+  conductor:
+    first_name: 'Nome'
+    last_name: 'Sobrenome'
+    full_name: 'Nome completo'
+    nickname: 'Como costuma ser chamado'
+    qualified: 'Habilitado'
+    birthday: 'Data de nascimento'
+    bio: 'Biogafia'
+    cpf: 'CPF'
