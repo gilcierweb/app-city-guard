@@ -14,66 +14,66 @@
     </div>
   </div>
 
-<!--  <div class="mb-3">-->
-    <%#= form.label :brand, class: "form-label" %>
-    <%#= form.number_field :brand, class: "form-control" %>
-<!--  </div>-->
+  <!--  <div class="mb-3">-->
+  <%#= form.label :brand, class: "form-label" %>
+  <%#= form.number_field :brand, class: "form-control" %>
+  <!--  </div>-->
 
   <div class="mb-3">
-    <%= form.label :brand_id, class: "form-label" %>
+    <%= form.label :brand_id, t('activerecord.attributes.vehicle.brand_id'), class: "form-label" %>
     <%= form.select(:brand_id, Brand.select_list(), { :prompt => t('form.select') }, { class: 'form-select form-select-lg select2-input', disabled: nil, data: { target: 'brand-load.brand' } }) %>
   </div>
 
 </div>
 
 <div class="mb-3">
-  <%= form.label :model, class: "form-label" %>
+  <%= form.label :model, t('activerecord.attributes.vehicle.model'), class: "form-label" %>
   <%= form.text_field :model, class: "form-control" %>
 </div>
 
 <div class="mb-3">
-  <%= form.label :color, class: "form-label" %>
+  <%= form.label :color, t('activerecord.attributes.vehicle.color'), class: "form-label" %>
   <%= form.text_field :color, class: "form-control" %>
 </div>
 
 <!--<div class="mb-3">-->
-  <%#= form.label :state_name, class: "form-label" %>
-  <%#= form.text_field :state_name, class: "form-control" %>
+<%#= form.label :state_name, class: "form-label" %>
+<%#= form.text_field :state_name, class: "form-control" %>
 <!--</div>-->
 
 <!--<div class="mb-3">-->
-  <%#= form.label :city_name, class: "form-label" %>
-  <%#= form.text_field :city_name, class: "form-control" %>
+<%#= form.label :city_name, class: "form-label" %>
+<%#= form.text_field :city_name, class: "form-control" %>
 <!--</div>-->
 
 <div class="mb-3">
-  <%= form.label :plate, class: "form-label" %>
+  <%= form.label :plate, t('activerecord.attributes.vehicle.plate'), class: "form-label" %>
   <%= form.text_field :plate, class: "form-control" %>
 </div>
 
 <div class="mb-3">
-  <%= form.label :tachometer, class: "form-label" %>
+  <%= form.label :tachometer, t('activerecord.attributes.vehicle.tachometer'), class: "form-label" %>
   <%= form.text_field :tachometer, class: "form-control" %>
 </div>
 
 <div class="mb-3">
-  <%= form.label :chassi, class: "form-label" %>
+  <%= form.label :chassi, t('activerecord.attributes.vehicle.chassi'), class: "form-label" %>
   <%= form.text_field :chassi, class: "form-control" %>
 </div>
 
 <div class="mb-3">
-  <%= form.label :engine_number, class: "form-label" %>
+  <%= form.label :engine_number, t('activerecord.attributes.vehicle.engine_number'), class: "form-label" %>
   <%= form.text_field :engine_number, class: "form-control" %>
 </div>
 
 <div data-controller="city-load">
   <div class="mb-3">
-    <%= form.label :state_id, class: "form-label" %>
+    <%= form.label :state_id, t('activerecord.attributes.vehicle.state_id'), class: "form-label" %>
     <%= form.select(:state_id, State.select_list(), { :prompt => t('form.select') }, { class: 'form-select form-select-lg select2-input', disabled: nil, data: { target: 'city-load.state', action: "change->city-load#cities" } }) %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :city_id, class: "form-label" %>
+    <%= form.label :city_id, t('activerecord.attributes.vehicle.city_id'), class: "form-label" %>
     <%= form.select(:city_id, {}, { :prompt => t('form.select') }, { class: 'form-select form-select-lg select2-input', disabled: nil, data: { target: 'city-load.city', } }) %>
   </div>
 </div>

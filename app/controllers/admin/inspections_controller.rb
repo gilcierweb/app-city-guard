@@ -68,7 +68,7 @@ class Admin::InspectionsController < AdminController
   end
 
   def brands
-    brand = Brand.select('brands.id, brands."name"').where(kind: params[:kind]).order('brands."name" ASC')
+    brand = Brand.select(:id, :name).where(kind: params[:kind]).order(name: :ASC)
 
     respond_to do |format|
       format.json { render json: { :success => true, :data => brand }, :status => :ok }

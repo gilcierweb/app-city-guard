@@ -85,8 +85,8 @@ pt-BR:
         chassi: 'Chassi'
         engine_number: 'Número do motor'
         brand_id: 'Marca'
-        state: 'Estado'
-        city: 'Cidade'
+        state_id: 'Estado'
+        city_id: 'Cidade'
         conductor: 'Condutor'
 
 
