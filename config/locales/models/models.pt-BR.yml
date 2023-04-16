@@ -28,6 +28,10 @@ pt-BR:
         one: "Contato"
         other: "Contatos"
 
+      profile:
+        one: "Perfil"
+        other: "Perfis"
+
     attributes:
 
       user:
@@ -38,15 +42,6 @@ pt-BR:
         password_confirmation: "Confirmação da Senha"
         current_password: "Senha Atual"
         remember_me: "Entrar automaticamente"
-
-      profile:
-        full_name: 'Nome completo'
-        email: 'Email'
-        city: 'Cidade'
-        state: 'Estado'
-        phone: 'Telefone'
-        subject: 'Assunto'
-        message: 'Mensagem' 
 
       inspection:
         address_full: 'Endereço completo'
@@ -102,6 +97,25 @@ pt-BR:
         kinds:
           car: 'Carro'
           moto: 'Moto'
+
+      profile:
+        first_name: 'Nome'
+        last_name: 'Sobrenome'
+        full_name: 'Nome Completo'
+        nickname: 'Apelido'
+        cpf: 'CPF'
+        avatar: 'Avatar'
+        number: 'Número'
+        bio: 'Biografia'
+        birthday: 'Data de nascimento'
+        attachment: 'Currículo'
+        title: 'Título de seu perfil'
+        description: 'Descrição'
+        phone: 'Telefone'
+        phone_commercial: 'Telefone comercial'
+        cell_phone: 'Celular'
+        user_id: 'Usuário'
+        location: 'Endereço completo'
 
       contact:
         full_name: 'Nome completo'
