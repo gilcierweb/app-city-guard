@@ -3,7 +3,7 @@ class Admin::InspectionsController < AdminController
 
   # GET /admin/inspections or /admin/inspections.json
   def index
-    @pagy, @inspections = pagy(Inspection.order(id: :desc))
+    @pagy, @inspections = pagy(Inspection.includes(:user).order(id: :desc))
   end
 
   # GET /admin/inspections/1 or /admin/inspections/1.json
