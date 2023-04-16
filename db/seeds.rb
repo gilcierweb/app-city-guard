@@ -399,7 +399,6 @@ puts 'Inspections'
     conductor_id: conductor.id
   }
 
-
   vehicle = Vehicle.create!(data_vehicles)
 }
-Vehicle.update_all(kind: 1)
+

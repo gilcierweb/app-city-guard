@@ -13,6 +13,12 @@ export default class extends Controller {
             let event = new Event('change', { bubbles: true }) // fire a native event
             this.dispatchEvent(event);
         });
+
+        const selector = $('.select2-input').select2({
+            theme: "bootstrap-5",
+            width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
+            placeholder: $(this).data('placeholder'),
+        }).trigger('change');
     }
 
     cities() {
