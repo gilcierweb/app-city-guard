@@ -1,51 +1,51 @@
 <div id="<%= dom_id inspection %>">
   <p>
-    <strong>Code:</strong>
+    <strong><%= t('activerecord.attributes.inspection.code') %>:</strong>
     <%= inspection.code %>
   </p>
 
   <p>
-    <strong>Motive apprehension:</strong>
+    <strong><%= t('activerecord.attributes.inspection.motive_apprehension') %>:</strong>
     <%= inspection.motive_apprehension %>
   </p>
 
   <p>
-    <strong>Address full:</strong>
+    <strong><%= t('activerecord.attributes.inspection.address_full') %>:</strong>
     <%= inspection.address_full %>
   </p>
 
   <p>
-    <strong>Latitude:</strong>
+    <strong><%= t('activerecord.attributes.inspection.latitude') %>:</strong>
     <%= inspection.latitude %>
   </p>
 
   <p>
-    <strong>Longitude:</strong>
+    <strong><%= t('activerecord.attributes.inspection.longitude') %>:</strong>
     <%= inspection.longitude %>
   </p>
 
   <p>
-    <strong>Neighborhood:</strong>
+    <strong><%= t('activerecord.attributes.inspection.neighborhood') %>:</strong>
     <%= inspection.neighborhood %>
   </p>
 
   <p>
-    <strong>Observations:</strong>
+    <strong><%= t('activerecord.attributes.inspection.observations') %>:</strong>
     <%= inspection.observations %>
   </p>
 
   <p>
-    <strong>Situation:</strong>
+    <strong><%= t('activerecord.attributes.inspection.situation') %>:</strong>
     <%= inspection.situation %>
   </p>
 
   <p>
-    <strong>Status:</strong>
+    <strong><%= t('activerecord.attributes.inspection.status') %>:</strong>
     <%= inspection.status %>
   </p>
 
   <p>
-    <strong>User:</strong>
+    <strong><%= t('activerecord.attributes.inspection.code') %>:</strong>
     <%= inspection.user_id %>
   </p>
 
@@ -61,7 +61,7 @@
   </p>
   <p>
     <strong><%= t('activerecord.attributes.conductor.qualified') %>:</strong>
-    <%= conductor.qualified %>
+    <%= display_boolean_raw(conductor.qualified) %>
   </p>
   <p>
     <strong><%= t('activerecord.attributes.conductor.cpf') %>:</strong>
@@ -80,11 +80,11 @@
   <% vehicle = inspection.conductors.first.vehicles.first %>
   <p>
     <strong><%= t('activerecord.attributes.vehicle.kind') %>:</strong>
-    <%= vehicle.kind %>
+    <%= display_enum(vehicle.kind) %>
   </p>
   <p>
     <strong><%= t('activerecord.attributes.vehicle.brand_id') %>:</strong>
-    <%= vehicle.brand_id %>
+    <%= vehicle.brand.name %>
   </p>
   <p>
     <strong><%= t('activerecord.attributes.vehicle.code') %>:</strong>
@@ -111,12 +111,13 @@
     <%= vehicle.tachometer %>
   </p>
   <p>
-    <strong><%= t('activerecord.attributes.vehicle.city_id') %>:</strong>
-    <%= vehicle.city_id %>
-  </p>
-  <p>
     <strong><%= t('activerecord.attributes.vehicle.state_id') %>:</strong>
-    <%= vehicle.state_id %>
+    <%= vehicle.state.name_pt_BR %>
+  </p>
+
+  <p>
+    <strong><%= t('activerecord.attributes.vehicle.city_id') %>:</strong>
+    <%= vehicle.city.name_pt_BR %>
   </p>
 
 </div>

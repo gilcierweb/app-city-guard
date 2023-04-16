@@ -369,7 +369,7 @@ puts 'Inspections'
 
   conductor = Conductor.create!(data_conductor)
 
-  kind = Faker::Vehicle.car_type
+  kind = Faker::Number.between(from: 1, to: 3) # Faker::Vehicle.car_type
   brand = Faker::Vehicle.make
   # brand_db = Brand.where(id: random_number_state)
   brand_id = Faker::Number.between(from: 1, to: 93)
@@ -402,3 +402,4 @@ puts 'Inspections'
 
   vehicle = Vehicle.create!(data_vehicles)
 }
+Vehicle.update_all(kind: 1)

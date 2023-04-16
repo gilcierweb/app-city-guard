@@ -33,6 +33,16 @@ module ApplicationHelper
     end
   end
 
+  def display_enum(level)
+    case level
+    when 1, :car then
+      'Carro'
+    when 2, :moto then
+      'Moto'
+    when 3, :truck then
+      'Caminhão'
+    end
+  end
 
   def active_class(path)
     if request.path == path
