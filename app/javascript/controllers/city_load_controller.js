@@ -9,16 +9,23 @@ export default class extends Controller {
     connect() {
         // const element = document.querySelector('.js-choice');
         // const choices = new Choices(element)
-        $(this.cityTarget).on('select2:city', function () {
-            let event = new Event('change', { bubbles: true }) // fire a native event
-            this.dispatchEvent(event);
-        });
 
         const selector = $('.select2-input').select2({
             theme: "bootstrap-5",
             width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
             placeholder: $(this).data('placeholder'),
-        }).trigger('change');
+        }).trigger('change.select2');
+
+        $(this.stateTarget).on("select2:select", function(e) {
+            let event = new Event('change', { bubbles: true }) // fire a native event
+            this.dispatchEvent(event);
+        });
+
+        $(this.cityTarget).on("select2:select", function(e) {
+            let event = new Event('change', { bubbles: true }) // fire a native event
+            this.dispatchEvent(event);
+        });
+
     }
 
     cities() {

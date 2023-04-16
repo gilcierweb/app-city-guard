@@ -16,13 +16,13 @@ function sidebarMenuToggle() {
 
 sidebarToggle.addEventListener("click", sidebarMenuToggle);
 
-const initSelect2 = function () {
+window.initSelect2 = function () {
     // select2 bootstrap
     const selector = $('.select2-input').select2({
         theme: "bootstrap-5",
         width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
         placeholder: $(this).data('placeholder'),
-    }).trigger('change');
+    }).trigger('change.select2');
 
 };
 
