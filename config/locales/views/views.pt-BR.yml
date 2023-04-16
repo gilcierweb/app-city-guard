@@ -1,4 +1,12 @@
 pt-BR:
+  inspection:
+    index:
+      date: 'Data'
+      guard: 'Agente'
+      kind: 'Tipo'
+      brand: 'Marca'
+      conductor: 'Condutor'
+      situation: 'Situação'
   conductor:
     first_name: 'Nome'
     last_name: 'Sobrenome'

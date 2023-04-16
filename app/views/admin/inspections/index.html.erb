@@ -11,32 +11,24 @@
       <table id="basic-table-inspections" class="table table-striped mb-0" role="grid">
         <thead class="text-primary">
         <tr>
-          <th><%= t('activerecord.attributes.inspection.code') %></th>
-          <th><%= t('activerecord.attributes.inspection.motive_apprehension') %></th>
-          <th><%= t('activerecord.attributes.inspection.address_full') %></th>
-          <th><%= t('activerecord.attributes.inspection.latitude') %></th>
-          <th><%= t('activerecord.attributes.inspection.longitude') %></th>
-          <th><%= t('activerecord.attributes.inspection.neighborhood') %></th>
-          <th><%= t('activerecord.attributes.inspection.observations') %></th>
+          <th><%= t('inspection.index.date') %></th>
+          <th><%= t('inspection.index.guard') %></th>
+          <th><%= t('inspection.index.kind') %></th>
+          <th><%= t('inspection.index.brand') %></th>
+          <th><%= t('inspection.index.conductor') %></th>
           <th><%= t('activerecord.attributes.inspection.situation') %></th>
-          <th><%= t('activerecord.attributes.inspection.status') %></th>
-          <th><%= t('activerecord.attributes.inspection.user') %></th>
           <th><%= t('action') %></th>
         </tr>
         </thead>
         <tbody>
         <% @inspections.each do |inspection| %>
           <tr>
-            <td><%= inspection.code %></td>
-            <td><%= inspection.motive_apprehension %></td>
-            <td><%= inspection.address_full %></td>
-            <td><%= inspection.latitude %></td>
-            <td><%= inspection.longitude %></td>
-            <td><%= inspection.neighborhood %></td>
-            <td><%= inspection.observations %></td>
+            <td><%= inspection.created_at %></td>
+            <td><%= inspection.try(:email) %></td>
+            <td><%= display_enum(inspection.try(:kind)) %></td>
+            <td><%= inspection.try(:name)  %></td>
+            <td><%= inspection.try(:nickname)  %></td>
             <td><%= inspection.situation %></td>
-            <td><%= inspection.status %></td>
-            <td><%= inspection.user.try(:email) %></td>
             <td>
               <%= link_to t('show'), [:admin, inspection], class: 'btn btn-info' %>
               <%= link_to t('edit'), edit_admin_inspection_path(inspection), class: 'btn btn-primary' %>
