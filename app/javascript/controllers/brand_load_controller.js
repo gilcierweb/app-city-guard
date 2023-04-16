@@ -4,9 +4,16 @@ import axios from "../custom-axios";
 
 // Connects to data-controller="brand-load"
 export default class extends Controller {
-    static targets = ["kind", "brand"];
+    static targets = ["kind", "brand","select"];
 
     connect() {
+        // const element = document.querySelector('.js-choice');
+        // const choices = new Choices(element)
+        // "select"
+        $(this.brandTarget).on('select2:brand', function () {
+            let event = new Event('change', { bubbles: true }) // fire a native event
+            this.dispatchEvent(event);
+        });
     }
 
     brands(event) {

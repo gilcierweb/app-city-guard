@@ -18,32 +18,32 @@
 # user.add_role? :employee
 # user.has_role? :employee
 
-# puts 'Brand car'
-# path = File.join(File.dirname(__FILE__), "./seeds/brand_car.json")
-# records = JSON.parse(File.read(path))
-# records.each do |record|
-#   puts record.inspect
-#   puts data = {code: record['codigo'], name: record['nome'], kind: 1}
-#   Brand.create(data)
-# end
-#
-# puts 'Brand moto'
-# path = File.join(File.dirname(__FILE__), "./seeds/brand_moto.json")
-# records = JSON.parse(File.read(path))
-# records.each do |record|
-#   puts record.inspect
-#   puts data = {code: record['codigo'], name: record['nome'], kind: 2}
-#   Brand.create(data)
-# end
-#
-# puts 'Brand truck'
-# path = File.join(File.dirname(__FILE__), "./seeds/brand_truck.json")
-# records = JSON.parse(File.read(path))
-# records.each do |record|
-#   puts record.inspect
-#   puts data = {code: record['codigo'], name: record['nome'], kind: 3}
-#   Brand.create(data)
-# end
+puts 'Brand car'
+path = File.join(File.dirname(__FILE__), "./seeds/brand_car.json")
+records = JSON.parse(File.read(path))
+records.each do |record|
+  puts record.inspect
+  puts data = { code: record['codigo'], name: record['nome'], kind: 1 }
+  Brand.create(data)
+end
+
+puts 'Brand moto'
+path = File.join(File.dirname(__FILE__), "./seeds/brand_moto.json")
+records = JSON.parse(File.read(path))
+records.each do |record|
+  puts record.inspect
+  puts data = { code: record['codigo'], name: record['nome'], kind: 2 }
+  Brand.create(data)
+end
+
+puts 'Brand truck'
+path = File.join(File.dirname(__FILE__), "./seeds/brand_truck.json")
+records = JSON.parse(File.read(path))
+records.each do |record|
+  puts record.inspect
+  puts data = { code: record['codigo'], name: record['nome'], kind: 3 }
+  Brand.create(data)
+end
 
 require 'open-uri'
 
@@ -280,7 +280,7 @@ country_list.each do |row|
 end
 
 State.destroy_all
-
+puts 'end country'
 puts 'States'
 
 state_list = [
@@ -319,6 +319,7 @@ state_list.each do |row|
   State.create(:country_id => country_id, :code_ibge => code_ibge, :abbreviation => abbreviation, :name_pt_BR => name_pt_BR, :name_en => name_en, :name_es => name_es)
 end
 
+puts 'end states'
 puts 'Cities'
 
 City.destroy_all
@@ -330,3 +331,74 @@ URI.open("https://gist.githubusercontent.com/gilcierweb/a97908b2bba6117dde38/raw
     City.create!(:state_id => state_id, :code_ibge => code_ibge, :name_pt_BR => name_pt_BR, :name_en => name_pt_BR, :name_es => name_pt_BR)
   end
 end
+
+puts 'end cities'
+
+puts 'Inspections'
+
+100.times {
+
+  address_full = Faker::Address.full_address
+  motive_apprehension = Faker::Lorem.sentence
+  neighborhood = Faker::Address.community
+  observations = Faker::Lorem.paragraph
+  user_id = 1
+
+  data_inspection = {
+    address_full: address_full,
+    motive_apprehension: motive_apprehension,
+    neighborhood: neighborhood,
+    observations: observations,
+    user_id: user_id
+  }
+
+  inspection = Inspection.create!(data_inspection)
+
+  full_name = Faker::Name.name
+  nickname = Faker::Internet.username(specifier: full_name)
+  cpf = Faker::IDNumber.brazilian_citizen_number
+  qualified = Faker::Boolean.boolean
+
+  data_conductor = {
+    full_name: full_name,
+    nickname: nickname,
+    cpf: cpf,
+    qualified: qualified,
+    inspection_id: inspection.id
+  }
+
+  conductor = Conductor.create!(data_conductor)
+
+  kind = Faker::Vehicle.car_type
+  brand = Faker::Vehicle.make
+  # brand_db = Brand.where(id: random_number_state)
+  brand_id = Faker::Number.between(from: 1, to: 93)
+  model = Faker::Vehicle.model(make_of_model: brand)
+  color = Faker::Vehicle.color
+  plate = Faker::Vehicle.license_plate
+  tachometer = Faker::Vehicle.mileage(min: 10000, max: 100000)
+  chassi = Faker::Vehicle.vin
+  engine_number = Faker::Vehicle.engine
+  random_number_state = Faker::Number.between(from: 1, to: 27)
+  city = City.where(state_id: random_number_state)
+  random_number_city = Faker::Number.between(from: city.first.id, to: city.last.id)
+  state_id = random_number_state # Faker::Address.state_abbr
+  city_id = random_number_city # Faker::Address.city
+
+  data_vehicles = {
+    kind: kind,
+    brand_id: brand_id,
+    model: model,
+    color: color,
+    plate: plate,
+    tachometer: tachometer,
+    chassi: chassi,
+    engine_number: engine_number,
+    state_id: state_id,
+    city_id: city_id,
+    conductor_id: conductor.id
+  }
+
+
+  vehicle = Vehicle.create!(data_vehicles)
+}

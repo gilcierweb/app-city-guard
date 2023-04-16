@@ -25,7 +25,7 @@
 #
 class Conductor < ApplicationRecord
   belongs_to :inspection
-  has_many :vehicles
+  has_many :vehicles, class_name: 'Vehicle'
 
   enum qualified: { yes: true, no: false, }
 

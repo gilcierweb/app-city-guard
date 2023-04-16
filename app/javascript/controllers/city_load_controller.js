@@ -7,6 +7,12 @@ export default class extends Controller {
     static targets = ["state", "city"];
 
     connect() {
+        // const element = document.querySelector('.js-choice');
+        // const choices = new Choices(element)
+        $(this.cityTarget).on('select2:city', function () {
+            let event = new Event('change', { bubbles: true }) // fire a native event
+            this.dispatchEvent(event);
+        });
     }
 
     cities() {

@@ -21,7 +21,7 @@
 
   <div class="mb-3">
     <%= form.label :brand_id, t('activerecord.attributes.vehicle.brand_id'), class: "form-label" %>
-    <%= form.select(:brand_id, Brand.select_list(), { :prompt => t('form.select') }, { class: 'form-select form-select-lg select2-input', disabled: nil, data: { target: 'brand-load.brand' } }) %>
+    <%= form.select(:brand_id, Brand.select_list(), { :prompt => t('form.select') }, { class: 'form-select form-select-lg select2-input js-choice', disabled: nil, data: { target: 'brand-load.brand' } }) %>
   </div>
 
 </div>
@@ -77,8 +77,8 @@
     <%= form.select(:city_id, {}, { :prompt => t('form.select') }, { class: 'form-select form-select-lg select2-input', disabled: nil, data: { target: 'city-load.city', } }) %>
   </div>
 </div>
-
-<div class="mb-3">
-  <%= form.label :conductor_id, class: "form-label" %>
-  <%= form.number_field :conductor_id, class: "form-control" %>
-</div>
+<%= form.hidden_field :city_id, value: 1, class: "form-control" %>
+<!--<div class="mb-3">-->
+  <%#= form.label :conductor_id, class: "form-label" %>
+  <%#= form.number_field :conductor_id, class: "form-control" %>
+<!--</div>-->

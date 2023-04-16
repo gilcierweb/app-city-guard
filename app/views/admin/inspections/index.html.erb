@@ -36,14 +36,19 @@
             <td><%= inspection.observations %></td>
             <td><%= inspection.situation %></td>
             <td><%= inspection.status %></td>
-            <td><%= inspection.user %></td>
-            <td><%= link_to t('show'), [:admin, inspection], class: 'btn btn-info' %>
-              <%= link_to t('edit'), edit_inspection_path(inspection), class: 'btn btn-primary' %>
-              <%= link_to t('destroy'), [:admin, inspection], method: :delete, data: { confirm: t('confirm') }, class: 'btn btn-danger' %></td>
+            <td><%= inspection.user.try(:email) %></td>
+            <td>
+              <%= link_to t('show'), [:admin, inspection], class: 'btn btn-info' %>
+              <%= link_to t('edit'), edit_admin_inspection_path(inspection), class: 'btn btn-primary' %>
+              <%= link_to t('destroy'), [:admin, inspection], method: :delete, data: { confirm: t('confirm') }, class: 'btn btn-danger' %>
+            </td>
           </tr>
         <% end %>
         </tbody>
       </table>
+
+      <%== pagy_bootstrap_nav(@pagy) %>
+
     </div>
 
     <%= link_to t('new'), new_admin_inspection_path, class: 'btn btn-success' %>

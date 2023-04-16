@@ -49,4 +49,74 @@
     <%= inspection.user_id %>
   </p>
 
+  <h1>Condutor</h1>
+  <% conductor = inspection.conductors.first %>
+  <p>
+    <strong><%= t('activerecord.attributes.conductor.full_name') %>:</strong>
+    <%= conductor.full_name %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.conductor.nickname') %>:</strong>
+    <%= conductor.nickname %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.conductor.qualified') %>:</strong>
+    <%= conductor.qualified %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.conductor.cpf') %>:</strong>
+    <%= conductor.cpf %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.conductor.birthday') %>:</strong>
+    <%= conductor.birthday %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.conductor.bio') %>:</strong>
+    <%= conductor.bio %>
+  </p>
+
+  <h1>Veiculo</h1>
+  <% vehicle = inspection.conductors.first.vehicles.first %>
+  <p>
+    <strong><%= t('activerecord.attributes.vehicle.kind') %>:</strong>
+    <%= vehicle.kind %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.vehicle.brand_id') %>:</strong>
+    <%= vehicle.brand_id %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.vehicle.code') %>:</strong>
+    <%= vehicle.plate %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.vehicle.model') %>:</strong>
+    <%= vehicle.model %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.vehicle.color') %>:</strong>
+    <%= vehicle.color %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.vehicle.engine_number') %>:</strong>
+    <%= vehicle.engine_number %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.vehicle.chassi') %>:</strong>
+    <%= vehicle.chassi %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.vehicle.tachometer') %>:</strong>
+    <%= vehicle.tachometer %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.vehicle.city_id') %>:</strong>
+    <%= vehicle.city_id %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.vehicle.state_id') %>:</strong>
+    <%= vehicle.state_id %>
+  </p>
+
 </div>

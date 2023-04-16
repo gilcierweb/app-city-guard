@@ -3,7 +3,7 @@ class Admin::InspectionsController < AdminController
 
   # GET /admin/inspections or /admin/inspections.json
   def index
-    @inspections = Inspection.all
+    @pagy, @inspections = pagy(Inspection.order(id: :desc))
   end
 
   # GET /admin/inspections/1 or /admin/inspections/1.json
@@ -23,6 +23,9 @@ class Admin::InspectionsController < AdminController
 
   # POST /admin/inspections or /admin/inspections.json
   def create
+    puts 'inspection_paramsinspection_paramsinspection_params'
+    puts inspection_params.to_json
+    puts 'inspection_paramsinspection_paramsinspection_params'
     @inspection = Inspection.new(inspection_params)
 
     respond_to do |format|
@@ -89,8 +92,8 @@ class Admin::InspectionsController < AdminController
   # Only allow a list of trusted parameters through.
   def inspection_params
     params.require(:inspection).permit(:code, :motive_apprehension, :address_full, :latitude, :longitude, :neighborhood, :observations, :situation, :status, :user_id,
-                                       conductors_attributes: [:id, :first_name, :last_name, :full_name, :nickname, :cpf, :birthday, :bio, :inspection_id,
-                                                               vehicle_attributes: [:id, :kind, :color, :plate, :tachometer, :chassi, :engine_number, :brand_id, :state_id, :city_id, :conductor_id, :qualified],
+                                       conductors_attributes: [:id, :first_name, :last_name, :full_name, :nickname, :cpf, :birthday, :bio, :inspection_id, :qualified,
+                                                               vehicles_attributes: [:id, :kind, :color, :model, :plate, :tachometer, :chassi, :engine_number, :brand_id, :state_id, :city_id, :conductor_id,],
                                        ],
     )
   end

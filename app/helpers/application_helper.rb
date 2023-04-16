@@ -1,5 +1,7 @@
 module ApplicationHelper
 
+  include Pagy::Frontend
+
   def flash_class(level)
     case level
     when 'info' then

@@ -24,6 +24,8 @@ default: &default
 
 development:
   <<: *default
+#  port: <%#= ENV.fetch("DATABASE_PORT") { 5432 } %>
+#  url: <%#= ENV['DATABASE_URL'] %>
   database: app_city_guard_development
 
   # The specified database role being used to connect to postgres.

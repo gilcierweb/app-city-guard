@@ -55,8 +55,8 @@
   <%#= form.text_field :inspection_id, class: "form-control" %>
 <!--</div>-->
 
-<h2>Sobre o veículo</h2>
+<h2 class="mb-4">Sobre o veículo</h2>
 
-<%= form.fields_for :vehicle do |vehicle_subform| %>
+<%= form.fields_for :vehicles, Conductor.new.vehicles.build do |vehicle_subform| %>
   <%= render 'form_vehicle', form: vehicle_subform %>
 <% end %>

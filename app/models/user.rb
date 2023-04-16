@@ -29,4 +29,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :inspections
+
+  def self.select_list()
+    self.all.collect { |row| [row.email, row.id] }
+  end
 end
