@@ -1,4 +1,4 @@
-<%= form_with(model: [:admin, profile]) do |form| %>
+<%= form_with(model: [:admin, profile], class: "row g-3") do |form| %>
   <% if profile.errors.any? %>
     <div class="alert alert-danger" role="alert">
       <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -15,32 +15,32 @@
     <%= render 'form_user', form: user_subform %>
   <% end %>
 
-  <div class="mb-3">
+  <div class="col-md-6 mb-3">
     <%= form.label :first_name, class: "form-label" %>
     <%= form.text_field :first_name, class: "form-control" %>
   </div>
 
-  <div class="mb-3">
+  <div class="col-md-6 mb-3">
     <%= form.label :last_name, class: "form-label" %>
     <%= form.text_field :last_name, class: "form-control" %>
   </div>
 
-  <div class="mb-3">
+  <div class="col-md-6 mb-3">
     <%= form.label :full_name, class: "form-label" %>
     <%= form.text_field :full_name, class: "form-control" %>
   </div>
 
-  <div class="mb-3">
+  <div class="col-md-6 mb-3">
     <%= form.label :nickname, class: "form-label" %>
     <%= form.text_field :nickname, class: "form-control" %>
   </div>
 
-  <div class="mb-3">
+  <div class="col-md-6 mb-3">
     <%= form.label :cpf, class: "form-label" %>
     <%= form.number_field :cpf, class: "form-control" %>
   </div>
 
-  <div class="mb-3">
+  <div class="col-md-6 mb-3">
     <%= form.label :number, class: "form-label" %>
     <%= form.number_field :number, class: "form-control" %>
   </div>
