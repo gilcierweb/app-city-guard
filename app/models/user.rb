@@ -30,6 +30,12 @@ class User < ApplicationRecord
 
   has_many :inspections
 
+  after_create :init_profile
+
+  def init_profile
+    self.create_profile!
+  end
+
   def self.select_list()
     self.all.collect { |row| [row.email, row.id] }
   end
