@@ -23,7 +23,7 @@
         <tbody>
         <% @inspections.each do |inspection| %>
           <tr>
-            <td><%= inspection.created_at %></td>
+            <td><%= format_date(inspection.created_at) %></td>
             <td><%= inspection.try(:email) %></td>
             <td><%= display_enum(inspection.try(:kind)) %></td>
             <td><%= inspection.try(:name)  %></td>

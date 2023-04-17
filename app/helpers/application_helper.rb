@@ -62,4 +62,12 @@ module ApplicationHelper
       'Caminhão'
     end
   end
+
+  def format_date(date)
+    date.strftime('%d/%m/%Y')
+  end
+
+  def format_datetime(datetime)
+    datetime.strftime('%d/%m/%Y %H:%M')
+  end
 end

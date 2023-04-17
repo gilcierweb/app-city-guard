@@ -24,8 +24,8 @@
             <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
           <% end -%>
           <td><%%= link_to t('show'), <%= model_resource_name(singular_table_name) %>, class: 'btn btn-info' %>
-          <%%= link_to t('edit'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-primary' %>
-          <%%= link_to t('destroy'), <%= singular_table_name %>, method: :delete, data: { confirm: t('confirm')}, class: 'btn btn-danger' %></td>
+          <%%= link_to t('edit'), edit_<%= model_resource_name(singular_table_name) %>_path(<%= singular_table_name %>), class: 'btn btn-primary' %>
+          <%%= link_to t('destroy'), <%= model_resource_name(singular_table_name) %>, method: :delete, data: { confirm: t('confirm')}, class: 'btn btn-danger' %></td>
         </tr>
         <%% end %>
         </tbody>

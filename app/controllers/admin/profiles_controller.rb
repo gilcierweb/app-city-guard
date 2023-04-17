@@ -3,7 +3,7 @@ class Admin::ProfilesController < AdminController
 
   # GET /admin/profiles or /admin/profiles.json
   def index
-    @profiles = Profile.all
+    @pagy, @profiles = pagy(Profile.includes(:user).order(id: :desc))
   end
 
   # GET /admin/profiles/1 or /admin/profiles/1.json

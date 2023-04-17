@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# user = User.create(username: nil, password: nil)
+# user = User.create(email: nil, password: nil)
 #
 # user = User.find(user)
 # user.add_role :admin
@@ -17,6 +17,46 @@
 #
 # user.add_role? :employee
 # user.has_role? :employee
+
+20.times do
+  # username = Faker::Internet.username(specifier: 8..12)
+  email = Faker::Internet.email
+  password = Faker::Internet.password(min_length: 8, max_length: 20, mix_case: true, special_characters: true)
+
+  user_data = {
+    email: email,
+    password: password,
+  }
+
+  user = User.create!(user_data)
+
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  full_name = Faker::Name.name
+  nickname = Faker::Internet.username(specifier: full_name)
+  cpf = Faker::IDNumber.brazilian_citizen_number(formatted: true)
+  number = Faker::PhoneNumber.phone_number
+  bio = Faker::Quote.famous_last_words
+  birthday = Faker::Date.birthday(min_age: 18, max_age: 65)
+  avatar = Faker::Avatar.image(slug: full_name, size: '300x300', format: 'jpg')
+  status = Faker::Boolean.boolean(true_ratio: 0.7)
+
+  data_profile = {
+    first_name: first_name,
+    last_name: last_name,
+    full_name: full_name,
+    nickname: nickname,
+    cpf: cpf,
+    number: number,
+    bio: bio,
+    birthday: birthday,
+    avatar: avatar,
+    status: status,
+    user_id: user.id
+  }
+
+  profile = Profile.create!(data_profile)
+end
 
 puts 'Brand car'
 path = File.join(File.dirname(__FILE__), "./seeds/brand_car.json")
