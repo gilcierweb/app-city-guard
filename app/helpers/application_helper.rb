@@ -54,12 +54,16 @@ module ApplicationHelper
 
   def display_situation_enum(level)
     case level
-    when 1, :car then
-      'Carro'
-    when 2, :moto then
-      'Moto'
-    when 3, :truck then
-      'Caminhão'
+    when 1, :confiscated then
+      '<span class="badge bg-danger">Confiscado</span>'
+    when 2, :patio then
+      '<span class="badge bg-warning">Pátio</span>'
+    when 3, :liberated then
+      '<span class="badge bg-success">Liberado</span>'
+    when 4, :pending then
+      '<span class="badge bg-primary">Pendente</span>'
+    else
+      '<span class="badge bg-dark">Não informado</span>'
     end
   end
 

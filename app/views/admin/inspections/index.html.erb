@@ -28,7 +28,7 @@
             <td><%= display_enum(inspection.try(:kind)) %></td>
             <td><%= inspection.try(:name) %></td>
             <td><%= inspection.try(:nickname) %></td>
-            <td><%= inspection.situation %></td>
+            <td><%= raw display_situation_enum(inspection.situation) %></td>
             <td>
               <%= link_to [:admin, inspection], title: t('show'), class: 'btn btn-info' do %>
                 <svg width="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
