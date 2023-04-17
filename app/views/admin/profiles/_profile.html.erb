@@ -1,46 +1,46 @@
 <div id="<%= dom_id profile %>">
   <p>
-    <strong>First name:</strong>
+    <strong><%= t('activerecord.attributes.profile.first_name') %>:</strong>
     <%= profile.first_name %>
   </p>
 
   <p>
-    <strong>Last name:</strong>
+    <strong><%= t('activerecord.attributes.profile.last_name') %>:</strong>
     <%= profile.last_name %>
   </p>
 
   <p>
-    <strong>Full name:</strong>
+    <strong><%= t('activerecord.attributes.profile.full_name') %>:</strong>
     <%= profile.full_name %>
   </p>
 
   <p>
-    <strong>Nickname:</strong>
+    <strong><%= t('activerecord.attributes.profile.nickname') %>:</strong>
     <%= profile.nickname %>
   </p>
 
   <p>
-    <strong>Cpf:</strong>
+    <strong><%= t('activerecord.attributes.profile.cpf') %>:</strong>
     <%= profile.cpf %>
   </p>
 
   <p>
-    <strong>Number:</strong>
+    <strong><%= t('activerecord.attributes.profile.number') %>:</strong>
     <%= profile.number %>
   </p>
 
   <p>
-    <strong>Bio:</strong>
+    <strong><%= t('activerecord.attributes.profile.bio') %>:</strong>
     <%= profile.bio %>
   </p>
 
   <p>
-    <strong>Birthday:</strong>
+    <strong><%= t('activerecord.attributes.profile.birthday') %>:</strong>
     <%= format_date(profile.birthday) %>
   </p>
 
   <p>
-    <strong>Avatar:</strong>
+    <strong><%= t('activerecord.attributes.profile.avatar') %>:</strong>
     <%= profile.avatar %>
   </p>
 
@@ -50,7 +50,7 @@
   </p>
 
   <p>
-    <strong>User:</strong>
+    <strong><%= t('activerecord.attributes.profile.user') %>:</strong>
     <%= profile.user_id %>
   </p>
 

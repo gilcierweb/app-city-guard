@@ -9,7 +9,7 @@
         <rect x="10.5562" y="-0.556152" width="28" height="4" rx="2" transform="rotate(45 10.5562 -0.556152)" fill="currentColor"/>
       </svg>
       <!--logo End--> <h4 class="logo-title">City Guard</h4>
-   <% end %>
+    <% end %>
     <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
       <i class="icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
           </a>
         </li>
         <li class="nav-item">
-            <%= link_to(admin_root_path, class:"nav-link #{active_class(admin_root_path)}", 'aria-current': 'page') do %>
+          <%= link_to(admin_root_path, class: "nav-link #{active_class(admin_root_path)}", 'aria-current': 'page') do %>
             <i class="icon">
               <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M16.0756 2H19.4616C20.8639 2 22.0001 3.14585 22.0001 4.55996V7.97452C22.0001 9.38864 20.8639 10.5345 19.4616 10.5345H16.0756C14.6734 10.5345 13.5371 9.38864 13.5371 7.97452V4.55996C13.5371 3.14585 14.6734 2 16.0756 2Z" fill="currentColor"></path>
@@ -38,7 +38,7 @@
               </svg>
             </i>
             <span class="item-name">Dashboard</span>
-       <% end %>
+          <% end %>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#horizontal-menu" role="button" aria-expanded="false" aria-controls="horizontal-menu">
@@ -59,8 +59,8 @@
             </i>
           </a>
           <ul class="sub-nav collapse" id="horizontal-menu" data-bs-parent="#sidebar-menu">
-            <li class="nav-item">              
-                  <%= link_to(admin_inspections_path, class:"nav-link #{active_class(admin_inspections_path)}" ) do %>
+            <li class="nav-item">
+              <%= link_to(admin_inspections_path, class: "nav-link #{active_class(admin_inspections_path)}") do %>
                 <i class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                     <g>
@@ -70,10 +70,10 @@
                 </i>
                 <i class="sidenav-mini-icon"> G </i>
                 <span class="item-name"> Gerenciar </span>
-             <% end %>
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to(new_admin_inspection_path, class:"nav-link #{active_class(new_admin_inspection_path)}") do %>
+              <%= link_to(new_admin_inspection_path, class: "nav-link #{active_class(new_admin_inspection_path)}") do %>
                 <i class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                     <g>
@@ -83,7 +83,7 @@
                 </i>
                 <i class="sidenav-mini-icon"> C </i>
                 <span class="item-name">Criar nova</span>
-             <% end %>
+              <% end %>
             </li>
           </ul>
         </li>
@@ -118,8 +118,8 @@
             </i>
           </a>
           <ul class="sub-nav collapse" id="sidebar-user" data-bs-parent="#sidebar-menu">
-            <li class="nav-item">            
-              <%= link_to(admin_profiles_path, class:"nav-link #{active_class(admin_profiles_path)}") do %>
+            <li class="nav-item">
+              <%= link_to(admin_profiles_path, class: "nav-link #{active_class(admin_profiles_path)}") do %>
                 <i class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                     <g>
@@ -129,10 +129,10 @@
                 </i>
                 <i class="sidenav-mini-icon"> P </i>
                 <span class="item-name">Perfil</span>
-             <% end %>
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to(new_admin_profile_path, class:"nav-link #{active_class(new_admin_profile_path)}") do %>
+              <%= link_to(new_admin_profile_path, class: "nav-link #{active_class(new_admin_profile_path)}") do %>
                 <i class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                     <g>
@@ -148,7 +148,7 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to(admin_root_path, class:"nav-link #{active_class(admin_root_path)}") do %>
+          <%= link_to(admin_root_path, class: "nav-link #{active_class(admin_root_path)}") do %>
             <i class="icon">
               <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.33049 2.00049H16.6695C20.0705 2.00049 21.9905 3.92949 22.0005 7.33049V16.6705C22.0005 20.0705 20.0705 22.0005 16.6695 22.0005H7.33049C3.92949 22.0005 2.00049 20.0705 2.00049 16.6705V7.33049C2.00049 3.92949 3.92949 2.00049 7.33049 2.00049ZM12.0495 17.8605C12.4805 17.8605 12.8395 17.5405 12.8795 17.1105V6.92049C12.9195 6.61049 12.7705 6.29949 12.5005 6.13049C12.2195 5.96049 11.8795 5.96049 11.6105 6.13049C11.3395 6.29949 11.1905 6.61049 11.2195 6.92049V17.1105C11.2705 17.5405 11.6295 17.8605 12.0495 17.8605ZM16.6505 17.8605C17.0705 17.8605 17.4295 17.5405 17.4805 17.1105V13.8305C17.5095 13.5095 17.3605 13.2105 17.0895 13.0405C16.8205 12.8705 16.4805 12.8705 16.2005 13.0405C15.9295 13.2105 15.7805 13.5095 15.8205 13.8305V17.1105C15.8605 17.5405 16.2195 17.8605 16.6505 17.8605ZM8.21949 17.1105C8.17949 17.5405 7.82049 17.8605 7.38949 17.8605C6.95949 17.8605 6.59949 17.5405 6.56049 17.1105V10.2005C6.53049 9.88949 6.67949 9.58049 6.95049 9.41049C7.21949 9.24049 7.56049 9.24049 7.83049 9.41049C8.09949 9.58049 8.25049 9.88949 8.21949 10.2005V17.1105Z" fill="currentColor"/>
@@ -158,7 +158,7 @@
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to(admin_root_path, class:"nav-link #{active_class(admin_root_path)}") do %>
+          <%= link_to(admin_root_path, class: "nav-link #{active_class(admin_root_path)}") do %>
             <i class="icon">
               <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M17.1801 4.41C17.1801 3.08 18.2601 2 19.5901 2C20.9201 2 22.0001 3.08 22.0001 4.41C22.0001 5.74 20.9201 6.82 19.5901 6.82C18.2601 6.82 17.1801 5.74 17.1801 4.41ZM13.33 14.7593L16.22 11.0303L16.18 11.0503C16.34 10.8303 16.37 10.5503 16.26 10.3003C16.151 10.0503 15.91 9.8803 15.651 9.8603C15.38 9.8303 15.111 9.9503 14.95 10.1703L12.531 13.3003L9.76 11.1203C9.59 10.9903 9.39 10.9393 9.19 10.9603C8.991 10.9903 8.811 11.0993 8.69 11.2593L5.731 15.1103L5.67 15.2003C5.5 15.5193 5.58 15.9293 5.88 16.1503C6.02 16.2403 6.17 16.3003 6.34 16.3003C6.571 16.3103 6.79 16.1893 6.93 16.0003L9.44 12.7693L12.29 14.9103L12.38 14.9693C12.7 15.1393 13.1 15.0603 13.33 14.7593ZM15.45 3.7803C15.41 4.0303 15.39 4.2803 15.39 4.5303C15.39 6.7803 17.21 8.5993 19.45 8.5993C19.7 8.5993 19.94 8.5703 20.19 8.5303V16.5993C20.19 19.9903 18.19 22.0003 14.79 22.0003H7.401C4 22.0003 2 19.9903 2 16.5993V9.2003C2 5.8003 4 3.7803 7.401 3.7803H15.45Z" fill="currentColor"/>
@@ -168,7 +168,7 @@
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to(admin_root_path, class:"nav-link #{active_class(admin_root_path)}") do %>
+          <%= link_to(admin_root_path, class: "nav-link #{active_class(admin_root_path)}") do %>
             <i class="icon">
               <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M20.4023 13.58C20.76 13.77 21.036 14.07 21.2301 14.37C21.6083 14.99 21.5776 15.75 21.2097 16.42L20.4943 17.62C20.1162 18.26 19.411 18.66 18.6855 18.66C18.3278 18.66 17.9292 18.56 17.6022 18.36C17.3365 18.19 17.0299 18.13 16.7029 18.13C15.6911 18.13 14.8429 18.96 14.8122 19.95C14.8122 21.1 13.872 22 12.6968 22H11.3069C10.1215 22 9.18125 21.1 9.18125 19.95C9.16081 18.96 8.31259 18.13 7.30085 18.13C6.96361 18.13 6.65702 18.19 6.40153 18.36C6.0745 18.56 5.66572 18.66 5.31825 18.66C4.58245 18.66 3.87729 18.26 3.49917 17.62L2.79402 16.42C2.4159 15.77 2.39546 14.99 2.77358 14.37C2.93709 14.07 3.24368 13.77 3.59115 13.58C3.87729 13.44 4.06125 13.21 4.23498 12.94C4.74596 12.08 4.43937 10.95 3.57071 10.44C2.55897 9.87 2.23194 8.6 2.81446 7.61L3.49917 6.43C4.09191 5.44 5.35913 5.09 6.38109 5.67C7.27019 6.15 8.425 5.83 8.9462 4.98C9.10972 4.7 9.20169 4.4 9.18125 4.1C9.16081 3.71 9.27323 3.34 9.4674 3.04C9.84553 2.42 10.5302 2.02 11.2763 2H12.7172C13.4735 2 14.1582 2.42 14.5363 3.04C14.7203 3.34 14.8429 3.71 14.8122 4.1C14.7918 4.4 14.8838 4.7 15.0473 4.98C15.5685 5.83 16.7233 6.15 17.6226 5.67C18.6344 5.09 19.9118 5.44 20.4943 6.43L21.179 7.61C21.7718 8.6 21.4447 9.87 20.4228 10.44C19.5541 10.95 19.2475 12.08 19.7687 12.94C19.9322 13.21 20.1162 13.44 20.4023 13.58ZM9.10972 12.01C9.10972 13.58 10.4076 14.83 12.0121 14.83C13.6165 14.83 14.8838 13.58 14.8838 12.01C14.8838 10.44 13.6165 9.18 12.0121 9.18C10.4076 9.18 9.10972 10.44 9.10972 12.01Z" fill="currentColor"/>
@@ -178,7 +178,7 @@
           <% end %>
         </li>
         <li class="nav-item mb-5">
-          <%= link_to(admin_root_path, class:"nav-link #{active_class(admin_root_path)}") do %>
+          <%= link_to(admin_root_path, class: "nav-link #{active_class(admin_root_path)}") do %>
             <i class="icon">
               <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.4183 5.49C13.9422 5.40206 13.505 5.70586 13.4144 6.17054C13.3238 6.63522 13.6285 7.08891 14.0916 7.17984C15.4859 7.45166 16.5624 8.53092 16.8353 9.92995V9.93095C16.913 10.3337 17.2675 10.6265 17.6759 10.6265C17.7306 10.6265 17.7854 10.6215 17.8412 10.6115C18.3043 10.5186 18.609 10.0659 18.5184 9.60018C18.1111 7.51062 16.5027 5.89672 14.4183 5.49Z" fill="currentColor"/>
@@ -194,7 +194,8 @@
         </li>
 
       </ul>
-      <!-- Sidebar Menu End -->        </div>
+      <!-- Sidebar Menu End -->
+    </div>
   </div>
   <div class="sidebar-footer"></div>
 </aside>
