@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <%= form.fields_for :user, profile.build_user do |user_subform| %>
+    <%= render 'form_user', form: user_subform %>
+  <% end %>
+
   <div class="mb-3">
     <%= form.label :first_name, class: "form-label" %>
     <%= form.text_field :first_name, class: "form-control" %>
