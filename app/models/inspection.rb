@@ -28,7 +28,7 @@ class Inspection < ApplicationRecord
   belongs_to :user
   has_many :conductors
 
-  enum kind: { confiscated: 1, patio: 2, liberated: 3, pending: 4 }
+  enum situation: { confiscated: 1, patio: 2, liberated: 3, pending: 4 }
 
   accepts_nested_attributes_for :conductors, reject_if: :all_blank, allow_destroy: true
 end
