@@ -115,6 +115,7 @@ pt-BR:
         phone_commercial: 'Telefone comercial'
         cell_phone: 'Celular'
         user_id: 'Usuário'
+        user: 'Usuário'
         location: 'Endereço completo'
 
       contact:

@@ -6,17 +6,18 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# user = User.create(email: nil, password: nil)
-#
-# user = User.find(user)
-# user.add_role :admin
-# user.has_role? :admin
-#
-# user.add_role? :manager
-# user.has_role? :manager
-#
-# user.add_role? :employee
-# user.has_role? :employee
+user_admin = User.create!(email: 'admin@mail.com', password: 123456)
+user_administrative = User.create!(email: 'administrative@mail.com', password: 123456)
+user_guard = User.create!(email: 'guard@mail.com', password: 123456)
+
+user_admin.add_role :admin
+user_admin.has_role? :admin
+
+user_administrative.add_role :administrative
+user_administrative.has_role? :administrative
+
+user_guard.add_role :guard
+user_guard.has_role? :guard
 
 20.times do
   # username = Faker::Internet.username(specifier: 8..12)
@@ -29,6 +30,10 @@
   }
 
   user = User.create!(user_data)
+
+  # add role guard
+  user.add_role :guard
+  user.has_role? :guard
 
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
@@ -376,13 +381,13 @@ puts 'end cities'
 
 puts 'Inspections'
 
-100.times {
+100.times do
 
   address_full = Faker::Address.full_address
   motive_apprehension = Faker::Lorem.sentence
   neighborhood = Faker::Address.community
   observations = Faker::Lorem.paragraph
-  user_id = 1
+  user_id = Faker::Number.between(from: 3, to: 20)
 
   data_inspection = {
     address_full: address_full,
@@ -440,5 +445,5 @@ puts 'Inspections'
   }
 
   vehicle = Vehicle.create!(data_vehicles)
-}
+end
 
