@@ -46,12 +46,12 @@
 
   <p>
     <strong>Status:</strong>
-    <%= profile.status %>
+    <%= display_boolean(profile.status) %>
   </p>
 
   <p>
     <strong><%= t('activerecord.attributes.profile.user') %>:</strong>
-    <%= profile.user_id %>
+    <%= profile.user.email %>
   </p>
 
 </div>
