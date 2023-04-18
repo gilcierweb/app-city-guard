@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  draw :admin
+   draw :admin
 
   draw :application
 

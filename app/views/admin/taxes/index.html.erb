@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <div class="header-title">
+
+      <h1>Taxes</h1>
+    </div>
+  </div>
+  <div id="companies" class="card-body p-0">
+    <div class="table-responsive mt-4">
+
+      <table id="basic-table-taxes" class="table table-striped mb-0" role="grid">
+        <thead class="text-primary">
+        <tr>
+          <th><%= t('activerecord.attributes.tax.amount') %></th>
+          <th><%= t('activerecord.attributes.tax.kind') %></th>
+          <th><%= t('activerecord.attributes.tax.status') %></th>
+          <th><%= t('activerecord.attributes.tax.user') %></th>
+          <th><%= t('action') %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @taxes.each do |tax| %>
+          <tr>
+            <td><%= tax.amount %></td>
+            <td><%= tax.kind %></td>
+            <td><%= tax.status %></td>
+            <td><%= tax.user %></td>
+            <td><%= link_to t('show'), [:admin, tax], class: 'btn btn-info' %>
+              <%= link_to t('edit'), edit_admin_taxe_path(tax), class: 'btn btn-primary' %>
+              <%= link_to t('destroy'), [:admin, tax], method: :delete, data: { confirm: t('confirm') }, class: 'btn btn-danger' %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <%= link_to t('new'), new_admin_tax_path, class: 'btn btn-success' %>
+  </div>
+</div>
+</div>

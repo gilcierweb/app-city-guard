@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <div class="header-title">
+      <h1>New tax</h1>
+    </div>
+  </div>
+  <div class="card-body">
+    <%= render "form", tax: @tax %>
+
+    <br>
+
+    <div>
+      <%= link_to t('back'), admin_taxes_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+</div>

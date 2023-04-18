@@ -32,6 +32,10 @@ pt-BR:
         one: "Perfil"
         other: "Perfis"
 
+      tax:
+        one: "Taxa"
+        other: "Taxas"
+
     attributes:
 
       user:
@@ -117,6 +121,19 @@ pt-BR:
         user_id: 'Usuário'
         user: 'Usuário'
         location: 'Endereço completo'
+
+      tax:
+        amount: 'Valor'
+        kind: 'Tipo'
+        kinds:
+          car: 'Carro'
+          moto: 'Moto'
+        status: 'Status'
+        statuses:
+          car: 'Carro'
+          moto: 'Moto'
+        user: 'Usuário'
+        user_id: 'Usuário'
 
       contact:
         full_name: 'Nome completo'
