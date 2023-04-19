@@ -78,6 +78,15 @@ module ApplicationHelper
     end
   end
 
+  def display_boolean_badge(level)
+    case level
+    when 1, true, 'active', 'yes', 'yes_ap' then
+      '<span class="badge bg-success">Ativo</span>'
+    when 0, false, 'inactive', 'no', 'no_ap' then
+      '<span class="badge bg-danger">Inativo</span>'
+    end
+  end
+
   def format_date(date)
     date.strftime('%d/%m/%Y')
   end

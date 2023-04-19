@@ -23,7 +23,7 @@
           <tr>
             <td><%=number_to_currency(tax.amount) %></td>
             <td><%= display_kind_enum(tax.kind) %></td>
-            <td><%= display_boolean(tax.status) %></td>
+            <td><%= raw display_boolean_badge(tax.status) %></td>
             <td><%= tax.user.email %></td>
             <td><%= link_to t('show'), [:admin, tax], class: 'btn btn-info' %>
               <%= link_to t('edit'), edit_admin_tax_path(tax), class: 'btn btn-primary' %>
