@@ -21,7 +21,7 @@ class Admin::TaxesController < AdminController
 
   # POST /admin/taxes or /admin/taxes.json
   def create
-    @tax = Tax.new(tax_params)
+    @tax = current_user.taxes.new(tax_params.merge(user: current_user))
 
     respond_to do |format|
       if @tax.save

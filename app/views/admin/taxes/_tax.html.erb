@@ -1,17 +1,17 @@
 <div id="<%= dom_id tax %>">
   <p>
     <strong><%= t('activerecord.attributes.tax.amount') %>:</strong>
-    <%= tax.amount %>
+    <%= number_to_currency(tax.amount) %>
   </p>
 
   <p>
     <strong><%= t('activerecord.attributes.tax.kind') %>:</strong>
-    <%= tax.kind %>
+    <%= display_kind_enum(tax.kind) %>
   </p>
 
   <p>
     <strong><%= t('activerecord.attributes.tax.status') %>:</strong>
-    <%= tax.status %>
+    <%= display_boolean(tax.status) %>
   </p>
 
   <p>

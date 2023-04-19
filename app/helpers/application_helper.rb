@@ -44,6 +44,17 @@ module ApplicationHelper
     end
   end
 
+  def display_kind_enum(level)
+    case level.to_sym
+    when 1, :car then
+      'Carro'
+    when 2, :moto then
+      'Moto'
+    when 3, :both then
+      'Ambos'
+    end
+  end
+
   def active_class(path)
     if request.path == path
       return 'active'

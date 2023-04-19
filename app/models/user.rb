@@ -34,6 +34,8 @@ class User < ApplicationRecord
 
   has_one :profile, class_name: 'Profile', inverse_of: :user, dependent: :destroy
 
+  has_many :taxes
+
   def init_profile
     self.create_profile!
   end
