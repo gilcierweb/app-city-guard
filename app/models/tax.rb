@@ -20,4 +20,6 @@
 #
 class Tax < ApplicationRecord
   belongs_to :user
+
+  enum kind: { car: 1, moto: 2, both: 3 }
 end
