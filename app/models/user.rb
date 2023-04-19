@@ -43,4 +43,13 @@ class User < ApplicationRecord
   def self.select_list()
     self.all.collect { |row| [row.email, row.id] }
   end
+
+  def self.select_list_roles
+    Role.all.collect { |row| [names_translate(row.name.to_sym), row.id] }
+  end
+
+  def self.names_translate(name)
+    roles = {admin: 'Administrador', administrative: 'Administrativo', guard: 'Agente'}
+    roles[name]
+  end
 end

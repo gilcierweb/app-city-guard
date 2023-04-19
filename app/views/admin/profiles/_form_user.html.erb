@@ -1,5 +1,5 @@
 <h3 class="mb-3">Dados de Acesso</h3>
-git
+
 <div class="mb-3">
   <%= form.label :email, class: "form-label" %>
   <%= form.text_field :email, class: "form-control" %>
@@ -8,4 +8,9 @@ git
 <div class="mb-3">
   <%= form.label :password, class: "form-label" %>
   <%= form.password_field :password, autocomplete: "current-password", class: "form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :role_ids, 'Regra', class: 'font-weight-bold' %>
+  <%= form.select(:role_ids, User.select_list_roles(), { :prompt => t('form.select') }, { class: 'form-control form-control-lg', disabled: nil }) %>
 </div>

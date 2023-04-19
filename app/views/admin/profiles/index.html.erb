@@ -37,7 +37,7 @@
             <td><%= profile.bio %></td>
             <td><%= format_date(profile.birthday) %></td>
             <td><%= profile.avatar %></td>
-            <td><%= display_boolean(profile.status) %></td>
+            <td><%= raw display_boolean_badge(profile.status) %></td>
             <td><%= profile.user.email %></td>
             <td>
               <%= link_to [:admin, profile], title: t('show'), class: 'btn btn-info' do %>
