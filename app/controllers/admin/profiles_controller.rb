@@ -13,6 +13,7 @@ class Admin::ProfilesController < AdminController
   # GET /admin/profiles/new
   def new
     @profile = Profile.new
+    @profile.build_user
   end
 
   # GET /admin/profiles/1/edit

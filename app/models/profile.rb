@@ -26,5 +26,8 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Profile < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, class_name: 'User', inverse_of: :profile, dependent: :destroy
+  accepts_nested_attributes_for :user, reject_if: :all_blank
+
+  # enum status: { yes: true, no: false, }
 end

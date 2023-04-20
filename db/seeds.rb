@@ -19,6 +19,11 @@ user_administrative.has_role? :administrative
 user_guard.add_role :guard
 user_guard.has_role? :guard
 
+user = User.find(22)
+user = User.find(23)
+user = User.find(24)
+
+
 20.times do
   # username = Faker::Internet.username(specifier: 8..12)
   email = Faker::Internet.email

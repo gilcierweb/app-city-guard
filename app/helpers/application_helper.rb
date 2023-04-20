@@ -88,7 +88,7 @@ module ApplicationHelper
   end
 
   def format_date(date)
-    date.strftime('%d/%m/%Y')
+    date.to_s.strftime('%d/%m/%Y')
   end
 
   def format_datetime(datetime)

@@ -11,6 +11,14 @@
     </div>
   <% end %>
 
+  <%
+    if form.object.new_record?
+      build_user = @profile.build_user
+    else
+      build_user = nil
+    end
+  %>
+
   <%= form.fields_for :user, profile.build_user do |user_subform| %>
     <%= render 'form_user', form: user_subform %>
   <% end %>
@@ -63,8 +71,13 @@
   </div>
 
   <div class="mb-3">
-    <%= form.label :status, class: "form-label" %>
-    <%= form.check_box :status, class: "form-control" %>
+    <%= form.label :status, class: "form-label" %> <br>
+
+    <div class="form-check form-switch form-check-inline">
+      <%= form.check_box :status, class: "form-check-input" %>
+      <%= form.label :status, 'Ativo', class: "form-check-label pl-2" %>
+    </div>
+
   </div>
 
 <!--  <div class="mb-3">-->
