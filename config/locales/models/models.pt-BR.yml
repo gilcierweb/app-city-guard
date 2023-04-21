@@ -36,6 +36,10 @@ pt-BR:
         one: "Taxa"
         other: "Taxas"
 
+      equipment:
+        one: "Equipamento"
+        other: "Equipamentos"
+
     attributes:
 
       user:
@@ -135,6 +139,10 @@ pt-BR:
           moto: 'Moto'
         user: 'Usuário'
         user_id: 'Usuário'
+
+      equipment:
+        name: 'Equipamento'
+        kind: 'Tipo'
 
       contact:
         full_name: 'Nome completo'

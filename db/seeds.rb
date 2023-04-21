@@ -23,7 +23,6 @@ user = User.find(22)
 user = User.find(23)
 user = User.find(24)
 
-
 20.times do
   # username = Faker::Internet.username(specifier: 8..12)
   email = Faker::Internet.email
@@ -452,3 +451,23 @@ puts 'Inspections'
   vehicle = Vehicle.create!(data_vehicles)
 end
 
+data_equipments = [{ name: 'Triangulo reflexivo' },
+                   { name: 'Espelho retrovisor interno' },
+                   { name: 'Limpador de parabrisas' },
+                   { name: 'Pala interna para sol(condutor)' },
+                   { name: 'Piscas de direção' },
+                   { name: 'Luzes de posição dianteiras' },
+                   { name: 'Luz baixa e alta' },
+                   { name: 'Chave de roda' },
+                   { name: 'Chave de fenda' },
+                   { name: 'Extintor' },
+                   { name: 'Espelho retrovisor externo' },
+                   { name: 'Retrovisor externo' },
+                   { name: 'Cintos de Segurança' },
+                   { name: 'Lanterna indicadora de direção' },
+                   { name: 'Luz de freio (stop)' },
+                   { name: 'Lanternas de posição traseiras' },
+                   { name: 'Macaco' },
+                   { name: 'Freios de estacionamento' }]
+
+Equipment.create(data_equipments)

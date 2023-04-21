@@ -88,10 +88,10 @@ module ApplicationHelper
   end
 
   def format_date(date)
-    date.to_s.strftime('%d/%m/%Y')
+    date.strftime('%d/%m/%Y') if date.present?
   end
 
   def format_datetime(datetime)
-    datetime.strftime('%d/%m/%Y %H:%M')
+    datetime.strftime('%d/%m/%Y %H:%M') if datetime.present?
   end
 end

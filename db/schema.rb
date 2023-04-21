@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_18_212443) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_21_021354) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_18_212443) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "equipment", force: :cascade do |t|
+    t.string "name"
+    t.integer "kind"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "equipment_requireds", force: :cascade do |t|
+    t.string "name"
+    t.integer "kind"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "inspections", force: :cascade do |t|
     t.integer "code"
     t.string "motive_apprehension"
@@ -71,6 +85,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_18_212443) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_inspections_on_user_id"
+  end
+
+  create_table "inspections_equipments", force: :cascade do |t|
+    t.bigint "inspection_id", null: false
+    t.bigint "equipment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["equipment_id"], name: "index_inspections_equipments_on_equipment_id"
+    t.index ["inspection_id"], name: "index_inspections_equipments_on_inspection_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -174,6 +197,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_18_212443) do
   add_foreign_key "cities", "states"
   add_foreign_key "conductors", "inspections"
   add_foreign_key "inspections", "users"
+  add_foreign_key "inspections_equipments", "equipment"
+  add_foreign_key "inspections_equipments", "inspections"
   add_foreign_key "profiles", "users"
   add_foreign_key "states", "countries"
   add_foreign_key "taxes", "users"

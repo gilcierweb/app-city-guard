@@ -91,7 +91,7 @@ class Admin::InspectionsController < AdminController
 
   # Only allow a list of trusted parameters through.
   def inspection_params
-    params.require(:inspection).permit(:code, :motive_apprehension, :address_full, :latitude, :longitude, :neighborhood, :observations, :situation, :status, :user_id,
+    params.require(:inspection).permit(:code, :motive_apprehension, :address_full, :latitude, :longitude, :neighborhood, :observations, :situation, :status, :user_id, equipment_ids:[],
                                        conductors_attributes: [:id, :first_name, :last_name, :full_name, :nickname, :cpf, :birthday, :bio, :inspection_id, :qualified,
                                                                vehicles_attributes: [:id, :kind, :color, :model, :plate, :tachometer, :chassi, :engine_number, :brand_id, :state_id, :city_id, :conductor_id,],
                                        ],

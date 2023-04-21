@@ -27,6 +27,8 @@
 class Inspection < ApplicationRecord
   belongs_to :user
   has_many :conductors
+  has_many :inspections_equipments
+  has_many :equipments, through: :inspections_equipments
 
   enum situation: { confiscated: 1, patio: 2, liberated: 3, pending: 4 }
 

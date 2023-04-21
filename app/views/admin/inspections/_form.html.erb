@@ -28,6 +28,11 @@
   <% end %>
 
   <div class="mb-3">
+    <%= form.label :equipment_ids, 'Equipamentos', class: 'form-label' %>
+    <%= form.select(:equipment_ids, Equipment.select_list(), { :prompt => t('form.select') }, { class: 'form-select form-select-lg select2-input', disabled: nil,multiple: true, }) %>
+  </div>
+
+  <div class="mb-3">
     <%= form.label :motive_apprehension, class: "form-label" %>
     <%= form.text_field :motive_apprehension, class: "form-control" %>
   </div>
